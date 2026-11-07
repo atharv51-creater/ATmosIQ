@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Secrets
+.env
+*.pem
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime cache (points to /tmp)
+pune_risk/data/raw

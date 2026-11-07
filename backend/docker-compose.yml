@@ -1,0 +1,7 @@
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    env_file: [.env]          # copy .env.example to .env first
+    volumes:
+      - ./data:/srv/data      # drop new pipeline output here; picked up without restart
