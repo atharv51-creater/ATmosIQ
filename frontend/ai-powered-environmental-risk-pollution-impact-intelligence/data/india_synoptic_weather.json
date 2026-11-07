@@ -1,0 +1,3377 @@
+{
+  "all": {
+    "region_id": "all",
+    "region_name": "All India National Grid",
+    "data_date": "2026-11-06",
+    "current": {
+      "wind_speed_kmh": 7.5,
+      "wind_speed_ms": 2.09,
+      "wind_gusts_kmh": 22.2,
+      "wind_dir": 300,
+      "wind_cardinal": "WNW",
+      "temperature_c": 25.2,
+      "feels_like_c": 24.7,
+      "humidity_pct": 56,
+      "pressure_hpa": 1013,
+      "boundary_layer_height_m": 665,
+      "ventilation_coefficient": 1390,
+      "dispersion_category": "Severe Stagnation",
+      "inversion_status": "Strong Surface Inversion Active",
+      "air_stagnation_index": 82,
+      "synoptic_overview": "Pan-India composite synoptic pattern: high stagnation over northern plains, moderate maritime dispersion along western & southern coastal belts.",
+      "air_mass_trajectory": "Inter-state air mass exchanges predominantly flowing northwest-to-southeast across the Indo-Gangetic conveyor."
+    },
+    "wind_rose": [
+      {
+        "cardinal": "N",
+        "angle": 0,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6.1
+      },
+      {
+        "cardinal": "NNE",
+        "angle": 22.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6.1
+      },
+      {
+        "cardinal": "NE",
+        "angle": 45,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6.1
+      },
+      {
+        "cardinal": "ENE",
+        "angle": 67.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6.1
+      },
+      {
+        "cardinal": "E",
+        "angle": 90,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6.1
+      },
+      {
+        "cardinal": "ESE",
+        "angle": 112.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6.1
+      },
+      {
+        "cardinal": "SE",
+        "angle": 135,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6.1
+      },
+      {
+        "cardinal": "SSE",
+        "angle": 157.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6.1
+      },
+      {
+        "cardinal": "S",
+        "angle": 180,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6.1
+      },
+      {
+        "cardinal": "SSW",
+        "angle": 202.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6.1
+      },
+      {
+        "cardinal": "SW",
+        "angle": 225,
+        "frequency_pct": 1.7,
+        "avg_speed_kmh": 6.2
+      },
+      {
+        "cardinal": "WSW",
+        "angle": 247.5,
+        "frequency_pct": 6.9,
+        "avg_speed_kmh": 6.8
+      },
+      {
+        "cardinal": "W",
+        "angle": 270,
+        "frequency_pct": 17.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "WNW",
+        "angle": 292.5,
+        "frequency_pct": 26,
+        "avg_speed_kmh": 8.9
+      },
+      {
+        "cardinal": "NW",
+        "angle": 315,
+        "frequency_pct": 24,
+        "avg_speed_kmh": 8.7
+      },
+      {
+        "cardinal": "NNW",
+        "angle": 337.5,
+        "frequency_pct": 13.4,
+        "avg_speed_kmh": 7.5
+      }
+    ],
+    "hourly_forecast": [
+      {
+        "hour": "00:00",
+        "wind_speed_kmh": 5.4,
+        "wind_gusts_kmh": 7.6,
+        "temperature_c": 21.2,
+        "relative_humidity_pct": 70,
+        "boundary_layer_height_m": 432,
+        "ventilation_index": 648,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "02:00",
+        "wind_speed_kmh": 5.4,
+        "wind_gusts_kmh": 7.6,
+        "temperature_c": 21.2,
+        "relative_humidity_pct": 70,
+        "boundary_layer_height_m": 432,
+        "ventilation_index": 648,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "04:00",
+        "wind_speed_kmh": 5.4,
+        "wind_gusts_kmh": 7.6,
+        "temperature_c": 21.2,
+        "relative_humidity_pct": 70,
+        "boundary_layer_height_m": 432,
+        "ventilation_index": 648,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "06:00",
+        "wind_speed_kmh": 5.4,
+        "wind_gusts_kmh": 7.6,
+        "temperature_c": 21.2,
+        "relative_humidity_pct": 70,
+        "boundary_layer_height_m": 432,
+        "ventilation_index": 648,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "08:00",
+        "wind_speed_kmh": 10.1,
+        "wind_gusts_kmh": 14.1,
+        "temperature_c": 28.7,
+        "relative_humidity_pct": 44,
+        "boundary_layer_height_m": 964,
+        "ventilation_index": 2705,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "10:00",
+        "wind_speed_kmh": 10.1,
+        "wind_gusts_kmh": 14.1,
+        "temperature_c": 28.7,
+        "relative_humidity_pct": 44,
+        "boundary_layer_height_m": 964,
+        "ventilation_index": 2705,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "12:00",
+        "wind_speed_kmh": 10.1,
+        "wind_gusts_kmh": 14.1,
+        "temperature_c": 28.7,
+        "relative_humidity_pct": 44,
+        "boundary_layer_height_m": 964,
+        "ventilation_index": 2705,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "14:00",
+        "wind_speed_kmh": 10.1,
+        "wind_gusts_kmh": 14.1,
+        "temperature_c": 28.7,
+        "relative_humidity_pct": 44,
+        "boundary_layer_height_m": 964,
+        "ventilation_index": 2705,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "16:00",
+        "wind_speed_kmh": 10.1,
+        "wind_gusts_kmh": 14.1,
+        "temperature_c": 28.7,
+        "relative_humidity_pct": 44,
+        "boundary_layer_height_m": 964,
+        "ventilation_index": 2705,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "18:00",
+        "wind_speed_kmh": 5.4,
+        "wind_gusts_kmh": 7.6,
+        "temperature_c": 21.2,
+        "relative_humidity_pct": 70,
+        "boundary_layer_height_m": 432,
+        "ventilation_index": 648,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "20:00",
+        "wind_speed_kmh": 5.4,
+        "wind_gusts_kmh": 7.6,
+        "temperature_c": 21.2,
+        "relative_humidity_pct": 70,
+        "boundary_layer_height_m": 432,
+        "ventilation_index": 648,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "22:00",
+        "wind_speed_kmh": 5.4,
+        "wind_gusts_kmh": 7.6,
+        "temperature_c": 21.2,
+        "relative_humidity_pct": 70,
+        "boundary_layer_height_m": 432,
+        "ventilation_index": 648,
+        "dispersion_quality": "Severe Stagnation"
+      }
+    ],
+    "stations": [
+      {
+        "cell_id": "876088400ffffff",
+        "name": "Pune Sector 1",
+        "lat": 18.614,
+        "lon": 73.766,
+        "wind_speed_kmh": 6.1,
+        "wind_gusts_kmh": 8.4,
+        "wind_cardinal": "ENE",
+        "wind_dir": 66.121,
+        "temperature_c": 26.1,
+        "humidity_pct": 51,
+        "boundary_layer_height": 682,
+        "ventilation_coefficient": 1153,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088401ffffff",
+        "name": "Pune Sector 2",
+        "lat": 18.606,
+        "lon": 73.745,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 9.2,
+        "wind_cardinal": "ENE",
+        "wind_dir": 65.489,
+        "temperature_c": 24.9,
+        "humidity_pct": 54,
+        "boundary_layer_height": 675,
+        "ventilation_coefficient": 1127,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088402ffffff",
+        "name": "Pune Sector 3",
+        "lat": 18.636,
+        "lon": 73.77,
+        "wind_speed_kmh": 6.1,
+        "wind_gusts_kmh": 8.4,
+        "wind_cardinal": "ENE",
+        "wind_dir": 66.121,
+        "temperature_c": 24.7,
+        "humidity_pct": 52,
+        "boundary_layer_height": 685,
+        "ventilation_coefficient": 1158,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088403ffffff",
+        "name": "Pune Sector 4",
+        "lat": 18.627,
+        "lon": 73.749,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.4,
+        "wind_cardinal": "ENE",
+        "wind_dir": 65.489,
+        "temperature_c": 25,
+        "humidity_pct": 49,
+        "boundary_layer_height": 678,
+        "ventilation_coefficient": 1132,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088404ffffff",
+        "name": "Pune Sector 5",
+        "lat": 18.6,
+        "lon": 73.782,
+        "wind_speed_kmh": 6.1,
+        "wind_gusts_kmh": 9.5,
+        "wind_cardinal": "ENE",
+        "wind_dir": 66.121,
+        "temperature_c": 24.7,
+        "humidity_pct": 53,
+        "boundary_layer_height": 699,
+        "ventilation_coefficient": 1181,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088405ffffff",
+        "name": "Pune Sector 6",
+        "lat": 18.592,
+        "lon": 73.761,
+        "wind_speed_kmh": 6.1,
+        "wind_gusts_kmh": 8.5,
+        "wind_cardinal": "ENE",
+        "wind_dir": 66.121,
+        "temperature_c": 25.2,
+        "humidity_pct": 55,
+        "boundary_layer_height": 696,
+        "ventilation_coefficient": 1176,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088406ffffff",
+        "name": "Pune Sector 7",
+        "lat": 18.622,
+        "lon": 73.786,
+        "wind_speed_kmh": 6.1,
+        "wind_gusts_kmh": 8.4,
+        "wind_cardinal": "ENE",
+        "wind_dir": 66.121,
+        "temperature_c": 25.1,
+        "humidity_pct": 54,
+        "boundary_layer_height": 692,
+        "ventilation_coefficient": 1169,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088408ffffff",
+        "name": "Pune Sector 8",
+        "lat": 18.611,
+        "lon": 73.708,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 9.1,
+        "wind_cardinal": "ENE",
+        "wind_dir": 65.489,
+        "temperature_c": 25.4,
+        "humidity_pct": 53,
+        "boundary_layer_height": 660,
+        "ventilation_coefficient": 1102,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "87608840affffff",
+        "name": "Pune Sector 9",
+        "lat": 18.633,
+        "lon": 73.713,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 9.2,
+        "wind_cardinal": "ENE",
+        "wind_dir": 65.489,
+        "temperature_c": 24.7,
+        "humidity_pct": 52,
+        "boundary_layer_height": 675,
+        "ventilation_coefficient": 1127,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "87608840cffffff",
+        "name": "Pune Sector 10",
+        "lat": 18.597,
+        "lon": 73.725,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.3,
+        "wind_cardinal": "ENE",
+        "wind_dir": 65.489,
+        "temperature_c": 24.8,
+        "humidity_pct": 50,
+        "boundary_layer_height": 667,
+        "ventilation_coefficient": 1114,
+        "dispersion_category": "Severe Stagnation"
+      }
+    ]
+  },
+  "delhi": {
+    "region_id": "delhi",
+    "region_name": "Delhi NCR",
+    "data_date": "2026-11-06",
+    "current": {
+      "wind_speed_kmh": 9.7,
+      "wind_speed_ms": 2.69,
+      "wind_gusts_kmh": 20.3,
+      "wind_dir": 315,
+      "wind_cardinal": "NW",
+      "temperature_c": 21.3,
+      "feels_like_c": 22.8,
+      "humidity_pct": 67,
+      "pressure_hpa": 1016,
+      "boundary_layer_height_m": 396,
+      "ventilation_coefficient": 1065,
+      "dispersion_category": "Severe Stagnation",
+      "inversion_status": "Strong Surface Inversion Active",
+      "air_stagnation_index": 85,
+      "synoptic_overview": "Persistent continental north-westerly flow with an intensely compressed planetary boundary layer (390 m) causing nocturnal thermal inversion traps and high stagnation.",
+      "air_mass_trajectory": "Plumes traversing north-westerly agricultural & industrial corridors (Punjab / Haryana / Panipat) entering Rohini & Anand Vihar."
+    },
+    "wind_rose": [
+      {
+        "cardinal": "N",
+        "angle": 0,
+        "frequency_pct": 1.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "NNE",
+        "angle": 22.5,
+        "frequency_pct": 1.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "NE",
+        "angle": 45,
+        "frequency_pct": 1.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "ENE",
+        "angle": 67.5,
+        "frequency_pct": 1.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "E",
+        "angle": 90,
+        "frequency_pct": 1.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "ESE",
+        "angle": 112.5,
+        "frequency_pct": 1.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "SE",
+        "angle": 135,
+        "frequency_pct": 1.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "SSE",
+        "angle": 157.5,
+        "frequency_pct": 1.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "S",
+        "angle": 180,
+        "frequency_pct": 1.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "SSW",
+        "angle": 202.5,
+        "frequency_pct": 1.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "SW",
+        "angle": 225,
+        "frequency_pct": 1.2,
+        "avg_speed_kmh": 7.9
+      },
+      {
+        "cardinal": "WSW",
+        "angle": 247.5,
+        "frequency_pct": 3.1,
+        "avg_speed_kmh": 8.2
+      },
+      {
+        "cardinal": "W",
+        "angle": 270,
+        "frequency_pct": 10.6,
+        "avg_speed_kmh": 9.2
+      },
+      {
+        "cardinal": "WNW",
+        "angle": 292.5,
+        "frequency_pct": 22.4,
+        "avg_speed_kmh": 10.8
+      },
+      {
+        "cardinal": "NW",
+        "angle": 315,
+        "frequency_pct": 28.8,
+        "avg_speed_kmh": 11.6
+      },
+      {
+        "cardinal": "NNW",
+        "angle": 337.5,
+        "frequency_pct": 22.4,
+        "avg_speed_kmh": 10.8
+      }
+    ],
+    "hourly_forecast": [
+      {
+        "hour": "00:00",
+        "wind_speed_kmh": 7,
+        "wind_gusts_kmh": 9.8,
+        "temperature_c": 17.3,
+        "relative_humidity_pct": 81,
+        "boundary_layer_height_m": 257,
+        "ventilation_index": 500,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "02:00",
+        "wind_speed_kmh": 7,
+        "wind_gusts_kmh": 9.8,
+        "temperature_c": 17.3,
+        "relative_humidity_pct": 81,
+        "boundary_layer_height_m": 257,
+        "ventilation_index": 500,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "04:00",
+        "wind_speed_kmh": 7,
+        "wind_gusts_kmh": 9.8,
+        "temperature_c": 17.3,
+        "relative_humidity_pct": 81,
+        "boundary_layer_height_m": 257,
+        "ventilation_index": 500,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "06:00",
+        "wind_speed_kmh": 7,
+        "wind_gusts_kmh": 9.8,
+        "temperature_c": 17.3,
+        "relative_humidity_pct": 81,
+        "boundary_layer_height_m": 257,
+        "ventilation_index": 500,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "08:00",
+        "wind_speed_kmh": 13.1,
+        "wind_gusts_kmh": 18.3,
+        "temperature_c": 24.8,
+        "relative_humidity_pct": 55,
+        "boundary_layer_height_m": 574,
+        "ventilation_index": 2089,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "10:00",
+        "wind_speed_kmh": 13.1,
+        "wind_gusts_kmh": 18.3,
+        "temperature_c": 24.8,
+        "relative_humidity_pct": 55,
+        "boundary_layer_height_m": 574,
+        "ventilation_index": 2089,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "12:00",
+        "wind_speed_kmh": 13.1,
+        "wind_gusts_kmh": 18.3,
+        "temperature_c": 24.8,
+        "relative_humidity_pct": 55,
+        "boundary_layer_height_m": 574,
+        "ventilation_index": 2089,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "14:00",
+        "wind_speed_kmh": 13.1,
+        "wind_gusts_kmh": 18.3,
+        "temperature_c": 24.8,
+        "relative_humidity_pct": 55,
+        "boundary_layer_height_m": 574,
+        "ventilation_index": 2089,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "16:00",
+        "wind_speed_kmh": 13.1,
+        "wind_gusts_kmh": 18.3,
+        "temperature_c": 24.8,
+        "relative_humidity_pct": 55,
+        "boundary_layer_height_m": 574,
+        "ventilation_index": 2089,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "18:00",
+        "wind_speed_kmh": 7,
+        "wind_gusts_kmh": 9.8,
+        "temperature_c": 17.3,
+        "relative_humidity_pct": 81,
+        "boundary_layer_height_m": 257,
+        "ventilation_index": 500,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "20:00",
+        "wind_speed_kmh": 7,
+        "wind_gusts_kmh": 9.8,
+        "temperature_c": 17.3,
+        "relative_humidity_pct": 81,
+        "boundary_layer_height_m": 257,
+        "ventilation_index": 500,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "22:00",
+        "wind_speed_kmh": 7,
+        "wind_gusts_kmh": 9.8,
+        "temperature_c": 17.3,
+        "relative_humidity_pct": 81,
+        "boundary_layer_height_m": 257,
+        "ventilation_index": 500,
+        "dispersion_quality": "Severe Stagnation"
+      }
+    ],
+    "stations": [
+      {
+        "cell_id": "in_delhi_001",
+        "name": "Anand Vihar (Delhi NCR)",
+        "lat": 28.647,
+        "lon": 77.315,
+        "wind_speed_kmh": 13,
+        "wind_gusts_kmh": 20.3,
+        "wind_cardinal": "NW",
+        "wind_dir": 315,
+        "temperature_c": 20.6,
+        "humidity_pct": 66,
+        "boundary_layer_height": 369,
+        "ventilation_coefficient": 1336,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_delhi_002",
+        "name": "Jahangirpuri (Delhi NCR)",
+        "lat": 28.726,
+        "lon": 77.168,
+        "wind_speed_kmh": 12.6,
+        "wind_gusts_kmh": 19.6,
+        "wind_cardinal": "NW",
+        "wind_dir": 315,
+        "temperature_c": 22.4,
+        "humidity_pct": 70,
+        "boundary_layer_height": 389,
+        "ventilation_coefficient": 1362,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_delhi_003",
+        "name": "Wazirpur Industrial (Delhi NCR)",
+        "lat": 28.698,
+        "lon": 77.165,
+        "wind_speed_kmh": 8.2,
+        "wind_gusts_kmh": 12.4,
+        "wind_cardinal": "NW",
+        "wind_dir": 315,
+        "temperature_c": 21.2,
+        "humidity_pct": 70,
+        "boundary_layer_height": 376,
+        "ventilation_coefficient": 861,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_delhi_004",
+        "name": "Okhla Phase-II (Delhi NCR)",
+        "lat": 28.53,
+        "lon": 77.275,
+        "wind_speed_kmh": 6.7,
+        "wind_gusts_kmh": 9.4,
+        "wind_cardinal": "NW",
+        "wind_dir": 315,
+        "temperature_c": 22.1,
+        "humidity_pct": 70,
+        "boundary_layer_height": 413,
+        "ventilation_coefficient": 764,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_delhi_005",
+        "name": "Bawana Industrial (Delhi NCR)",
+        "lat": 28.795,
+        "lon": 77.045,
+        "wind_speed_kmh": 11.7,
+        "wind_gusts_kmh": 16.5,
+        "wind_cardinal": "NW",
+        "wind_dir": 315,
+        "temperature_c": 22.3,
+        "humidity_pct": 67,
+        "boundary_layer_height": 393,
+        "ventilation_coefficient": 1281,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_delhi_006",
+        "name": "Narela GIDC (Delhi NCR)",
+        "lat": 28.845,
+        "lon": 77.095,
+        "wind_speed_kmh": 13.5,
+        "wind_gusts_kmh": 18.9,
+        "wind_cardinal": "NW",
+        "wind_dir": 315,
+        "temperature_c": 21.2,
+        "humidity_pct": 66,
+        "boundary_layer_height": 414,
+        "ventilation_coefficient": 1557,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_delhi_007",
+        "name": "Ghaziabad Sahibabad (Delhi NCR)",
+        "lat": 28.67,
+        "lon": 77.375,
+        "wind_speed_kmh": 7.1,
+        "wind_gusts_kmh": 10.9,
+        "wind_cardinal": "NW",
+        "wind_dir": 315,
+        "temperature_c": 21.8,
+        "humidity_pct": 69,
+        "boundary_layer_height": 399,
+        "ventilation_coefficient": 790,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_delhi_008",
+        "name": "Noida Sector 62 (Delhi NCR)",
+        "lat": 28.625,
+        "lon": 77.365,
+        "wind_speed_kmh": 10.4,
+        "wind_gusts_kmh": 14.6,
+        "wind_cardinal": "NW",
+        "wind_dir": 315,
+        "temperature_c": 22.3,
+        "humidity_pct": 66,
+        "boundary_layer_height": 391,
+        "ventilation_coefficient": 1126,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_delhi_009",
+        "name": "Noida Sector 125 (Delhi NCR)",
+        "lat": 28.545,
+        "lon": 77.335,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.8,
+        "wind_cardinal": "NW",
+        "wind_dir": 315,
+        "temperature_c": 20.8,
+        "humidity_pct": 65,
+        "boundary_layer_height": 375,
+        "ventilation_coefficient": 630,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_delhi_010",
+        "name": "Faridabad NIT (Delhi NCR)",
+        "lat": 28.395,
+        "lon": 77.305,
+        "wind_speed_kmh": 12.1,
+        "wind_gusts_kmh": 17.5,
+        "wind_cardinal": "NW",
+        "wind_dir": 315,
+        "temperature_c": 20.7,
+        "humidity_pct": 67,
+        "boundary_layer_height": 397,
+        "ventilation_coefficient": 1330,
+        "dispersion_category": "Severe Stagnation"
+      }
+    ]
+  },
+  "mumbai": {
+    "region_id": "mumbai",
+    "region_name": "Mumbai MMR",
+    "data_date": "2026-11-06",
+    "current": {
+      "wind_speed_kmh": 8.8,
+      "wind_speed_ms": 2.44,
+      "wind_gusts_kmh": 20.3,
+      "wind_dir": 250,
+      "wind_cardinal": "WSW",
+      "temperature_c": 29.1,
+      "feels_like_c": 30.6,
+      "humidity_pct": 73,
+      "pressure_hpa": 1012,
+      "boundary_layer_height_m": 815,
+      "ventilation_coefficient": 1989,
+      "dispersion_category": "Severe Stagnation",
+      "inversion_status": "Strong Surface Inversion Active",
+      "air_stagnation_index": 74,
+      "synoptic_overview": "Diurnal land-sea breeze oscillation with high marine humidity (74%). Morning calm transitions into moderate westerly sea breeze dispersing coastal corridors.",
+      "air_mass_trajectory": "Refinery and petrochemical emissions from Chembur & Taloja drifting north-eastward over Navi Mumbai & Thane basin."
+    },
+    "wind_rose": [
+      {
+        "cardinal": "N",
+        "angle": 0,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 7.2
+      },
+      {
+        "cardinal": "NNE",
+        "angle": 22.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 7.2
+      },
+      {
+        "cardinal": "NE",
+        "angle": 45,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 7.2
+      },
+      {
+        "cardinal": "ENE",
+        "angle": 67.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 7.2
+      },
+      {
+        "cardinal": "E",
+        "angle": 90,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 7.2
+      },
+      {
+        "cardinal": "ESE",
+        "angle": 112.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 7.2
+      },
+      {
+        "cardinal": "SE",
+        "angle": 135,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 7.2
+      },
+      {
+        "cardinal": "SSE",
+        "angle": 157.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 7.2
+      },
+      {
+        "cardinal": "S",
+        "angle": 180,
+        "frequency_pct": 2.3,
+        "avg_speed_kmh": 7.4
+      },
+      {
+        "cardinal": "SSW",
+        "angle": 202.5,
+        "frequency_pct": 8.5,
+        "avg_speed_kmh": 8.2
+      },
+      {
+        "cardinal": "SW",
+        "angle": 225,
+        "frequency_pct": 19,
+        "avg_speed_kmh": 9.6
+      },
+      {
+        "cardinal": "WSW",
+        "angle": 247.5,
+        "frequency_pct": 25.8,
+        "avg_speed_kmh": 10.5
+      },
+      {
+        "cardinal": "W",
+        "angle": 270,
+        "frequency_pct": 21.2,
+        "avg_speed_kmh": 9.9
+      },
+      {
+        "cardinal": "WNW",
+        "angle": 292.5,
+        "frequency_pct": 10.6,
+        "avg_speed_kmh": 8.5
+      },
+      {
+        "cardinal": "NW",
+        "angle": 315,
+        "frequency_pct": 3.2,
+        "avg_speed_kmh": 7.5
+      },
+      {
+        "cardinal": "NNW",
+        "angle": 337.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 7.2
+      }
+    ],
+    "hourly_forecast": [
+      {
+        "hour": "00:00",
+        "wind_speed_kmh": 6.3,
+        "wind_gusts_kmh": 8.8,
+        "temperature_c": 25.1,
+        "relative_humidity_pct": 87,
+        "boundary_layer_height_m": 530,
+        "ventilation_index": 928,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "02:00",
+        "wind_speed_kmh": 6.3,
+        "wind_gusts_kmh": 8.8,
+        "temperature_c": 25.1,
+        "relative_humidity_pct": 87,
+        "boundary_layer_height_m": 530,
+        "ventilation_index": 928,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "04:00",
+        "wind_speed_kmh": 6.3,
+        "wind_gusts_kmh": 8.8,
+        "temperature_c": 25.1,
+        "relative_humidity_pct": 87,
+        "boundary_layer_height_m": 530,
+        "ventilation_index": 928,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "06:00",
+        "wind_speed_kmh": 6.3,
+        "wind_gusts_kmh": 8.8,
+        "temperature_c": 25.1,
+        "relative_humidity_pct": 87,
+        "boundary_layer_height_m": 530,
+        "ventilation_index": 928,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "08:00",
+        "wind_speed_kmh": 11.9,
+        "wind_gusts_kmh": 16.7,
+        "temperature_c": 32.6,
+        "relative_humidity_pct": 61,
+        "boundary_layer_height_m": 1182,
+        "ventilation_index": 3907,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "10:00",
+        "wind_speed_kmh": 11.9,
+        "wind_gusts_kmh": 16.7,
+        "temperature_c": 32.6,
+        "relative_humidity_pct": 61,
+        "boundary_layer_height_m": 1182,
+        "ventilation_index": 3907,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "12:00",
+        "wind_speed_kmh": 11.9,
+        "wind_gusts_kmh": 16.7,
+        "temperature_c": 32.6,
+        "relative_humidity_pct": 61,
+        "boundary_layer_height_m": 1182,
+        "ventilation_index": 3907,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "14:00",
+        "wind_speed_kmh": 11.9,
+        "wind_gusts_kmh": 16.7,
+        "temperature_c": 32.6,
+        "relative_humidity_pct": 61,
+        "boundary_layer_height_m": 1182,
+        "ventilation_index": 3907,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "16:00",
+        "wind_speed_kmh": 11.9,
+        "wind_gusts_kmh": 16.7,
+        "temperature_c": 32.6,
+        "relative_humidity_pct": 61,
+        "boundary_layer_height_m": 1182,
+        "ventilation_index": 3907,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "18:00",
+        "wind_speed_kmh": 6.3,
+        "wind_gusts_kmh": 8.8,
+        "temperature_c": 25.1,
+        "relative_humidity_pct": 87,
+        "boundary_layer_height_m": 530,
+        "ventilation_index": 928,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "20:00",
+        "wind_speed_kmh": 6.3,
+        "wind_gusts_kmh": 8.8,
+        "temperature_c": 25.1,
+        "relative_humidity_pct": 87,
+        "boundary_layer_height_m": 530,
+        "ventilation_index": 928,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "22:00",
+        "wind_speed_kmh": 6.3,
+        "wind_gusts_kmh": 8.8,
+        "temperature_c": 25.1,
+        "relative_humidity_pct": 87,
+        "boundary_layer_height_m": 530,
+        "ventilation_index": 928,
+        "dispersion_quality": "Severe Stagnation"
+      }
+    ],
+    "stations": [
+      {
+        "cell_id": "in_mumbai_001",
+        "name": "Chembur East (Mumbai MMR)",
+        "lat": 19.062,
+        "lon": 72.902,
+        "wind_speed_kmh": 14.3,
+        "wind_gusts_kmh": 20.3,
+        "wind_cardinal": "WSW",
+        "wind_dir": 250,
+        "temperature_c": 28.8,
+        "humidity_pct": 75,
+        "boundary_layer_height": 813,
+        "ventilation_coefficient": 3236,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_mumbai_002",
+        "name": "Kurla West (Mumbai MMR)",
+        "lat": 19.068,
+        "lon": 72.878,
+        "wind_speed_kmh": 7.8,
+        "wind_gusts_kmh": 12.2,
+        "wind_cardinal": "WSW",
+        "wind_dir": 250,
+        "temperature_c": 29.2,
+        "humidity_pct": 71,
+        "boundary_layer_height": 822,
+        "ventilation_coefficient": 1776,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_mumbai_003",
+        "name": "BKC Business District (Mumbai MMR)",
+        "lat": 19.065,
+        "lon": 72.868,
+        "wind_speed_kmh": 11.4,
+        "wind_gusts_kmh": 15.6,
+        "wind_cardinal": "WSW",
+        "wind_dir": 250,
+        "temperature_c": 30,
+        "humidity_pct": 75,
+        "boundary_layer_height": 834,
+        "ventilation_coefficient": 2644,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_mumbai_004",
+        "name": "Navi Mumbai MIDC (Mahape) (Mumbai MMR)",
+        "lat": 19.115,
+        "lon": 73.015,
+        "wind_speed_kmh": 10.3,
+        "wind_gusts_kmh": 16.2,
+        "wind_cardinal": "WSW",
+        "wind_dir": 250,
+        "temperature_c": 28.9,
+        "humidity_pct": 75,
+        "boundary_layer_height": 805,
+        "ventilation_coefficient": 2302,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_mumbai_005",
+        "name": "Thane Majiwada (Mumbai MMR)",
+        "lat": 19.215,
+        "lon": 72.985,
+        "wind_speed_kmh": 6.7,
+        "wind_gusts_kmh": 9.4,
+        "wind_cardinal": "WSW",
+        "wind_dir": 250,
+        "temperature_c": 28.6,
+        "humidity_pct": 76,
+        "boundary_layer_height": 816,
+        "ventilation_coefficient": 1518,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_mumbai_006",
+        "name": "Andheri East (MIDC) (Mumbai MMR)",
+        "lat": 19.125,
+        "lon": 72.865,
+        "wind_speed_kmh": 11.7,
+        "wind_gusts_kmh": 18.3,
+        "wind_cardinal": "WSW",
+        "wind_dir": 250,
+        "temperature_c": 29.1,
+        "humidity_pct": 72,
+        "boundary_layer_height": 816,
+        "ventilation_coefficient": 2660,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_mumbai_007",
+        "name": "Dharavi Slum Cluster (Mumbai MMR)",
+        "lat": 19.04,
+        "lon": 72.855,
+        "wind_speed_kmh": 5.6,
+        "wind_gusts_kmh": 8.9,
+        "wind_cardinal": "WSW",
+        "wind_dir": 250,
+        "temperature_c": 28.2,
+        "humidity_pct": 76,
+        "boundary_layer_height": 803,
+        "ventilation_coefficient": 1245,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_mumbai_008",
+        "name": "Wadala Truck Terminal (Mumbai MMR)",
+        "lat": 19.025,
+        "lon": 72.875,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.5,
+        "wind_cardinal": "WSW",
+        "wind_dir": 250,
+        "temperature_c": 28.5,
+        "humidity_pct": 73,
+        "boundary_layer_height": 832,
+        "ventilation_coefficient": 1381,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_mumbai_009",
+        "name": "Panvel Industrial (Mumbai MMR)",
+        "lat": 18.995,
+        "lon": 73.115,
+        "wind_speed_kmh": 7.1,
+        "wind_gusts_kmh": 10.9,
+        "wind_cardinal": "WSW",
+        "wind_dir": 250,
+        "temperature_c": 28.9,
+        "humidity_pct": 73,
+        "boundary_layer_height": 803,
+        "ventilation_coefficient": 1582,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_mumbai_010",
+        "name": "Kalyan-Dombivli MIDC (Mumbai MMR)",
+        "lat": 19.225,
+        "lon": 73.135,
+        "wind_speed_kmh": 7.2,
+        "wind_gusts_kmh": 10.7,
+        "wind_cardinal": "WSW",
+        "wind_dir": 250,
+        "temperature_c": 30,
+        "humidity_pct": 73,
+        "boundary_layer_height": 805,
+        "ventilation_coefficient": 1618,
+        "dispersion_category": "Severe Stagnation"
+      }
+    ]
+  },
+  "pune": {
+    "region_id": "pune",
+    "region_name": "Pune Metro",
+    "data_date": "2026-11-06",
+    "current": {
+      "wind_speed_kmh": 6.5,
+      "wind_speed_ms": 1.81,
+      "wind_gusts_kmh": 17.1,
+      "wind_dir": 66.121,
+      "wind_cardinal": "ENE",
+      "temperature_c": 25.5,
+      "feels_like_c": 25,
+      "humidity_pct": 52,
+      "pressure_hpa": 955,
+      "boundary_layer_height_m": 680,
+      "ventilation_coefficient": 1231,
+      "dispersion_category": "Severe Stagnation",
+      "inversion_status": "Strong Surface Inversion Active",
+      "air_stagnation_index": 84,
+      "synoptic_overview": "North-easterly to westerly valley breeze across the Mula-Mutha basin. Moderate boundary layer height (680 m) with evening temperature inversions.",
+      "air_mass_trajectory": "Automotive & industrial emissions from Bhosari-PCMC corridor transported toward central Pune during calm evening hours."
+    },
+    "wind_rose": [
+      {
+        "cardinal": "N",
+        "angle": 0,
+        "frequency_pct": 3,
+        "avg_speed_kmh": 5.5
+      },
+      {
+        "cardinal": "NNE",
+        "angle": 22.5,
+        "frequency_pct": 10.1,
+        "avg_speed_kmh": 6.2
+      },
+      {
+        "cardinal": "NE",
+        "angle": 45,
+        "frequency_pct": 20.7,
+        "avg_speed_kmh": 7.3
+      },
+      {
+        "cardinal": "ENE",
+        "angle": 67.5,
+        "frequency_pct": 25.8,
+        "avg_speed_kmh": 7.8
+      },
+      {
+        "cardinal": "E",
+        "angle": 90,
+        "frequency_pct": 19.5,
+        "avg_speed_kmh": 7.2
+      },
+      {
+        "cardinal": "ESE",
+        "angle": 112.5,
+        "frequency_pct": 9,
+        "avg_speed_kmh": 6.1
+      },
+      {
+        "cardinal": "SE",
+        "angle": 135,
+        "frequency_pct": 2.5,
+        "avg_speed_kmh": 5.4
+      },
+      {
+        "cardinal": "SSE",
+        "angle": 157.5,
+        "frequency_pct": 1,
+        "avg_speed_kmh": 5.3
+      },
+      {
+        "cardinal": "S",
+        "angle": 180,
+        "frequency_pct": 1,
+        "avg_speed_kmh": 5.3
+      },
+      {
+        "cardinal": "SSW",
+        "angle": 202.5,
+        "frequency_pct": 1,
+        "avg_speed_kmh": 5.3
+      },
+      {
+        "cardinal": "SW",
+        "angle": 225,
+        "frequency_pct": 1,
+        "avg_speed_kmh": 5.3
+      },
+      {
+        "cardinal": "WSW",
+        "angle": 247.5,
+        "frequency_pct": 1,
+        "avg_speed_kmh": 5.3
+      },
+      {
+        "cardinal": "W",
+        "angle": 270,
+        "frequency_pct": 1,
+        "avg_speed_kmh": 5.3
+      },
+      {
+        "cardinal": "WNW",
+        "angle": 292.5,
+        "frequency_pct": 1,
+        "avg_speed_kmh": 5.3
+      },
+      {
+        "cardinal": "NW",
+        "angle": 315,
+        "frequency_pct": 1,
+        "avg_speed_kmh": 5.3
+      },
+      {
+        "cardinal": "NNW",
+        "angle": 337.5,
+        "frequency_pct": 1,
+        "avg_speed_kmh": 5.3
+      }
+    ],
+    "hourly_forecast": [
+      {
+        "hour": "00:00",
+        "wind_speed_kmh": 4.7,
+        "wind_gusts_kmh": 6.6,
+        "temperature_c": 21.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 442,
+        "ventilation_index": 577,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "02:00",
+        "wind_speed_kmh": 4.7,
+        "wind_gusts_kmh": 6.6,
+        "temperature_c": 21.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 442,
+        "ventilation_index": 577,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "04:00",
+        "wind_speed_kmh": 4.7,
+        "wind_gusts_kmh": 6.6,
+        "temperature_c": 21.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 442,
+        "ventilation_index": 577,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "06:00",
+        "wind_speed_kmh": 4.7,
+        "wind_gusts_kmh": 6.6,
+        "temperature_c": 21.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 442,
+        "ventilation_index": 577,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "08:00",
+        "wind_speed_kmh": 8.8,
+        "wind_gusts_kmh": 12.3,
+        "temperature_c": 29,
+        "relative_humidity_pct": 40,
+        "boundary_layer_height_m": 986,
+        "ventilation_index": 2410,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "10:00",
+        "wind_speed_kmh": 8.8,
+        "wind_gusts_kmh": 12.3,
+        "temperature_c": 29,
+        "relative_humidity_pct": 40,
+        "boundary_layer_height_m": 986,
+        "ventilation_index": 2410,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "12:00",
+        "wind_speed_kmh": 8.8,
+        "wind_gusts_kmh": 12.3,
+        "temperature_c": 29,
+        "relative_humidity_pct": 40,
+        "boundary_layer_height_m": 986,
+        "ventilation_index": 2410,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "14:00",
+        "wind_speed_kmh": 8.8,
+        "wind_gusts_kmh": 12.3,
+        "temperature_c": 29,
+        "relative_humidity_pct": 40,
+        "boundary_layer_height_m": 986,
+        "ventilation_index": 2410,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "16:00",
+        "wind_speed_kmh": 8.8,
+        "wind_gusts_kmh": 12.3,
+        "temperature_c": 29,
+        "relative_humidity_pct": 40,
+        "boundary_layer_height_m": 986,
+        "ventilation_index": 2410,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "18:00",
+        "wind_speed_kmh": 4.7,
+        "wind_gusts_kmh": 6.6,
+        "temperature_c": 21.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 442,
+        "ventilation_index": 577,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "20:00",
+        "wind_speed_kmh": 4.7,
+        "wind_gusts_kmh": 6.6,
+        "temperature_c": 21.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 442,
+        "ventilation_index": 577,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "22:00",
+        "wind_speed_kmh": 4.7,
+        "wind_gusts_kmh": 6.6,
+        "temperature_c": 21.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 442,
+        "ventilation_index": 577,
+        "dispersion_quality": "Severe Stagnation"
+      }
+    ],
+    "stations": [
+      {
+        "cell_id": "876088400ffffff",
+        "name": "Pune Sector 1",
+        "lat": 18.614,
+        "lon": 73.766,
+        "wind_speed_kmh": 6.1,
+        "wind_gusts_kmh": 8.4,
+        "wind_cardinal": "ENE",
+        "wind_dir": 66.121,
+        "temperature_c": 26.1,
+        "humidity_pct": 51,
+        "boundary_layer_height": 682,
+        "ventilation_coefficient": 1153,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088401ffffff",
+        "name": "Pune Sector 2",
+        "lat": 18.606,
+        "lon": 73.745,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 9.2,
+        "wind_cardinal": "ENE",
+        "wind_dir": 65.489,
+        "temperature_c": 24.9,
+        "humidity_pct": 54,
+        "boundary_layer_height": 675,
+        "ventilation_coefficient": 1127,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088402ffffff",
+        "name": "Pune Sector 3",
+        "lat": 18.636,
+        "lon": 73.77,
+        "wind_speed_kmh": 6.1,
+        "wind_gusts_kmh": 8.4,
+        "wind_cardinal": "ENE",
+        "wind_dir": 66.121,
+        "temperature_c": 24.7,
+        "humidity_pct": 52,
+        "boundary_layer_height": 685,
+        "ventilation_coefficient": 1158,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088403ffffff",
+        "name": "Pune Sector 4",
+        "lat": 18.627,
+        "lon": 73.749,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.4,
+        "wind_cardinal": "ENE",
+        "wind_dir": 65.489,
+        "temperature_c": 25,
+        "humidity_pct": 49,
+        "boundary_layer_height": 678,
+        "ventilation_coefficient": 1132,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088404ffffff",
+        "name": "Pune Sector 5",
+        "lat": 18.6,
+        "lon": 73.782,
+        "wind_speed_kmh": 6.1,
+        "wind_gusts_kmh": 9.5,
+        "wind_cardinal": "ENE",
+        "wind_dir": 66.121,
+        "temperature_c": 24.7,
+        "humidity_pct": 53,
+        "boundary_layer_height": 699,
+        "ventilation_coefficient": 1181,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088405ffffff",
+        "name": "Pune Sector 6",
+        "lat": 18.592,
+        "lon": 73.761,
+        "wind_speed_kmh": 6.1,
+        "wind_gusts_kmh": 8.5,
+        "wind_cardinal": "ENE",
+        "wind_dir": 66.121,
+        "temperature_c": 25.2,
+        "humidity_pct": 55,
+        "boundary_layer_height": 696,
+        "ventilation_coefficient": 1176,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088406ffffff",
+        "name": "Pune Sector 7",
+        "lat": 18.622,
+        "lon": 73.786,
+        "wind_speed_kmh": 6.1,
+        "wind_gusts_kmh": 8.4,
+        "wind_cardinal": "ENE",
+        "wind_dir": 66.121,
+        "temperature_c": 25.1,
+        "humidity_pct": 54,
+        "boundary_layer_height": 692,
+        "ventilation_coefficient": 1169,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "876088408ffffff",
+        "name": "Pune Sector 8",
+        "lat": 18.611,
+        "lon": 73.708,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 9.1,
+        "wind_cardinal": "ENE",
+        "wind_dir": 65.489,
+        "temperature_c": 25.4,
+        "humidity_pct": 53,
+        "boundary_layer_height": 660,
+        "ventilation_coefficient": 1102,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "87608840affffff",
+        "name": "Pune Sector 9",
+        "lat": 18.633,
+        "lon": 73.713,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 9.2,
+        "wind_cardinal": "ENE",
+        "wind_dir": 65.489,
+        "temperature_c": 24.7,
+        "humidity_pct": 52,
+        "boundary_layer_height": 675,
+        "ventilation_coefficient": 1127,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "87608840cffffff",
+        "name": "Pune Sector 10",
+        "lat": 18.597,
+        "lon": 73.725,
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.3,
+        "wind_cardinal": "ENE",
+        "wind_dir": 65.489,
+        "temperature_c": 24.8,
+        "humidity_pct": 50,
+        "boundary_layer_height": 667,
+        "ventilation_coefficient": 1114,
+        "dispersion_category": "Severe Stagnation"
+      }
+    ]
+  },
+  "bengaluru": {
+    "region_id": "bengaluru",
+    "region_name": "Bengaluru Urban",
+    "data_date": "2026-11-06",
+    "current": {
+      "wind_speed_kmh": 10,
+      "wind_speed_ms": 2.78,
+      "wind_gusts_kmh": 20.7,
+      "wind_dir": 80,
+      "wind_cardinal": "E",
+      "temperature_c": 23.7,
+      "feels_like_c": 23.2,
+      "humidity_pct": 57,
+      "pressure_hpa": 915,
+      "boundary_layer_height_m": 942,
+      "ventilation_coefficient": 2619,
+      "dispersion_category": "Moderate Dispersion",
+      "inversion_status": "Weak Inversion",
+      "air_stagnation_index": 57,
+      "synoptic_overview": "Elevated Deccan plateau breeze with a well-developed vertical mixing layer (940 m) providing favorable aerodynamic dispersion.",
+      "air_mass_trajectory": "Easterly convective breezes channeling industrial emissions from Peenya and Hosur road into suburban fringes."
+    },
+    "wind_rose": [
+      {
+        "cardinal": "N",
+        "angle": 0,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.2
+      },
+      {
+        "cardinal": "NNE",
+        "angle": 22.5,
+        "frequency_pct": 5.1,
+        "avg_speed_kmh": 8.8
+      },
+      {
+        "cardinal": "NE",
+        "angle": 45,
+        "frequency_pct": 14.2,
+        "avg_speed_kmh": 10.2
+      },
+      {
+        "cardinal": "ENE",
+        "angle": 67.5,
+        "frequency_pct": 24,
+        "avg_speed_kmh": 11.7
+      },
+      {
+        "cardinal": "E",
+        "angle": 90,
+        "frequency_pct": 24.7,
+        "avg_speed_kmh": 11.8
+      },
+      {
+        "cardinal": "ESE",
+        "angle": 112.5,
+        "frequency_pct": 15.4,
+        "avg_speed_kmh": 10.4
+      },
+      {
+        "cardinal": "SE",
+        "angle": 135,
+        "frequency_pct": 5.8,
+        "avg_speed_kmh": 8.9
+      },
+      {
+        "cardinal": "SSE",
+        "angle": 157.5,
+        "frequency_pct": 1.3,
+        "avg_speed_kmh": 8.2
+      },
+      {
+        "cardinal": "S",
+        "angle": 180,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.2
+      },
+      {
+        "cardinal": "SSW",
+        "angle": 202.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.2
+      },
+      {
+        "cardinal": "SW",
+        "angle": 225,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.2
+      },
+      {
+        "cardinal": "WSW",
+        "angle": 247.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.2
+      },
+      {
+        "cardinal": "W",
+        "angle": 270,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.2
+      },
+      {
+        "cardinal": "WNW",
+        "angle": 292.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.2
+      },
+      {
+        "cardinal": "NW",
+        "angle": 315,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.2
+      },
+      {
+        "cardinal": "NNW",
+        "angle": 337.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.2
+      }
+    ],
+    "hourly_forecast": [
+      {
+        "hour": "00:00",
+        "wind_speed_kmh": 7.2,
+        "wind_gusts_kmh": 10.1,
+        "temperature_c": 19.7,
+        "relative_humidity_pct": 71,
+        "boundary_layer_height_m": 612,
+        "ventilation_index": 1224,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "02:00",
+        "wind_speed_kmh": 7.2,
+        "wind_gusts_kmh": 10.1,
+        "temperature_c": 19.7,
+        "relative_humidity_pct": 71,
+        "boundary_layer_height_m": 612,
+        "ventilation_index": 1224,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "04:00",
+        "wind_speed_kmh": 7.2,
+        "wind_gusts_kmh": 10.1,
+        "temperature_c": 19.7,
+        "relative_humidity_pct": 71,
+        "boundary_layer_height_m": 612,
+        "ventilation_index": 1224,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "06:00",
+        "wind_speed_kmh": 7.2,
+        "wind_gusts_kmh": 10.1,
+        "temperature_c": 19.7,
+        "relative_humidity_pct": 71,
+        "boundary_layer_height_m": 612,
+        "ventilation_index": 1224,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "08:00",
+        "wind_speed_kmh": 13.5,
+        "wind_gusts_kmh": 18.9,
+        "temperature_c": 27.2,
+        "relative_humidity_pct": 45,
+        "boundary_layer_height_m": 1366,
+        "ventilation_index": 5123,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "10:00",
+        "wind_speed_kmh": 13.5,
+        "wind_gusts_kmh": 18.9,
+        "temperature_c": 27.2,
+        "relative_humidity_pct": 45,
+        "boundary_layer_height_m": 1366,
+        "ventilation_index": 5123,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "12:00",
+        "wind_speed_kmh": 13.5,
+        "wind_gusts_kmh": 18.9,
+        "temperature_c": 27.2,
+        "relative_humidity_pct": 45,
+        "boundary_layer_height_m": 1366,
+        "ventilation_index": 5123,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "14:00",
+        "wind_speed_kmh": 13.5,
+        "wind_gusts_kmh": 18.9,
+        "temperature_c": 27.2,
+        "relative_humidity_pct": 45,
+        "boundary_layer_height_m": 1366,
+        "ventilation_index": 5123,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "16:00",
+        "wind_speed_kmh": 13.5,
+        "wind_gusts_kmh": 18.9,
+        "temperature_c": 27.2,
+        "relative_humidity_pct": 45,
+        "boundary_layer_height_m": 1366,
+        "ventilation_index": 5123,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "18:00",
+        "wind_speed_kmh": 7.2,
+        "wind_gusts_kmh": 10.1,
+        "temperature_c": 19.7,
+        "relative_humidity_pct": 71,
+        "boundary_layer_height_m": 612,
+        "ventilation_index": 1224,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "20:00",
+        "wind_speed_kmh": 7.2,
+        "wind_gusts_kmh": 10.1,
+        "temperature_c": 19.7,
+        "relative_humidity_pct": 71,
+        "boundary_layer_height_m": 612,
+        "ventilation_index": 1224,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "22:00",
+        "wind_speed_kmh": 7.2,
+        "wind_gusts_kmh": 10.1,
+        "temperature_c": 19.7,
+        "relative_humidity_pct": 71,
+        "boundary_layer_height_m": 612,
+        "ventilation_index": 1224,
+        "dispersion_quality": "Severe Stagnation"
+      }
+    ],
+    "stations": [
+      {
+        "cell_id": "in_bengaluru_001",
+        "name": "Peenya Industrial Area (Bengaluru Urban)",
+        "lat": 13.03,
+        "lon": 77.52,
+        "wind_speed_kmh": 7.7,
+        "wind_gusts_kmh": 12.3,
+        "wind_cardinal": "E",
+        "wind_dir": 80,
+        "temperature_c": 23.5,
+        "humidity_pct": 58,
+        "boundary_layer_height": 955,
+        "ventilation_coefficient": 2053,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_bengaluru_002",
+        "name": "Whitefield IT & Export Zone (Bengaluru Urban)",
+        "lat": 12.975,
+        "lon": 77.745,
+        "wind_speed_kmh": 8.5,
+        "wind_gusts_kmh": 11.9,
+        "wind_cardinal": "E",
+        "wind_dir": 80,
+        "temperature_c": 23.8,
+        "humidity_pct": 58,
+        "boundary_layer_height": 941,
+        "ventilation_coefficient": 2211,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_bengaluru_003",
+        "name": "Central Silk Board (Bengaluru Urban)",
+        "lat": 12.918,
+        "lon": 77.624,
+        "wind_speed_kmh": 10.4,
+        "wind_gusts_kmh": 15.7,
+        "wind_cardinal": "E",
+        "wind_dir": 80,
+        "temperature_c": 23.7,
+        "humidity_pct": 58,
+        "boundary_layer_height": 918,
+        "ventilation_coefficient": 2653,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_bengaluru_004",
+        "name": "BTM Layout Phase 2 (Bengaluru Urban)",
+        "lat": 12.915,
+        "lon": 77.605,
+        "wind_speed_kmh": 9.1,
+        "wind_gusts_kmh": 14.2,
+        "wind_cardinal": "E",
+        "wind_dir": 80,
+        "temperature_c": 24.2,
+        "humidity_pct": 55,
+        "boundary_layer_height": 943,
+        "ventilation_coefficient": 2376,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_bengaluru_005",
+        "name": "Hebbal Flyover Junction (Bengaluru Urban)",
+        "lat": 13.038,
+        "lon": 77.592,
+        "wind_speed_kmh": 12.3,
+        "wind_gusts_kmh": 17.8,
+        "wind_cardinal": "E",
+        "wind_dir": 80,
+        "temperature_c": 24.3,
+        "humidity_pct": 58,
+        "boundary_layer_height": 950,
+        "ventilation_coefficient": 3249,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_bengaluru_006",
+        "name": "Electronic City Phase 1 (Bengaluru Urban)",
+        "lat": 12.845,
+        "lon": 77.665,
+        "wind_speed_kmh": 7.2,
+        "wind_gusts_kmh": 9.9,
+        "wind_cardinal": "E",
+        "wind_dir": 80,
+        "temperature_c": 24.1,
+        "humidity_pct": 56,
+        "boundary_layer_height": 951,
+        "ventilation_coefficient": 1902,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_bengaluru_007",
+        "name": "Rajajinagar Industrial (Bengaluru Urban)",
+        "lat": 12.99,
+        "lon": 77.555,
+        "wind_speed_kmh": 10.9,
+        "wind_gusts_kmh": 16.3,
+        "wind_cardinal": "E",
+        "wind_dir": 80,
+        "temperature_c": 24.1,
+        "humidity_pct": 57,
+        "boundary_layer_height": 930,
+        "ventilation_coefficient": 2827,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_bengaluru_008",
+        "name": "Koramangala 80ft Road (Bengaluru Urban)",
+        "lat": 12.935,
+        "lon": 77.625,
+        "wind_speed_kmh": 13.2,
+        "wind_gusts_kmh": 20.7,
+        "wind_cardinal": "E",
+        "wind_dir": 80,
+        "temperature_c": 23.7,
+        "humidity_pct": 56,
+        "boundary_layer_height": 933,
+        "ventilation_coefficient": 3424,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_bengaluru_009",
+        "name": "Jayanagar 4th Block (Bengaluru Urban)",
+        "lat": 12.925,
+        "lon": 77.585,
+        "wind_speed_kmh": 11.4,
+        "wind_gusts_kmh": 16.2,
+        "wind_cardinal": "E",
+        "wind_dir": 80,
+        "temperature_c": 22.8,
+        "humidity_pct": 58,
+        "boundary_layer_height": 956,
+        "ventilation_coefficient": 3040,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_bengaluru_010",
+        "name": "Bannerghatta Road Corridor (Bengaluru Urban)",
+        "lat": 12.895,
+        "lon": 77.595,
+        "wind_speed_kmh": 9.3,
+        "wind_gusts_kmh": 13,
+        "wind_cardinal": "E",
+        "wind_dir": 80,
+        "temperature_c": 23,
+        "humidity_pct": 57,
+        "boundary_layer_height": 944,
+        "ventilation_coefficient": 2426,
+        "dispersion_category": "Moderate Dispersion"
+      }
+    ]
+  },
+  "kolkata": {
+    "region_id": "kolkata",
+    "region_name": "Kolkata Metropolitan",
+    "data_date": "2026-11-06",
+    "current": {
+      "wind_speed_kmh": 8.4,
+      "wind_speed_ms": 2.33,
+      "wind_gusts_kmh": 20.6,
+      "wind_dir": 340,
+      "wind_cardinal": "NNW",
+      "temperature_c": 25,
+      "feels_like_c": 26.5,
+      "humidity_pct": 78,
+      "pressure_hpa": 1014,
+      "boundary_layer_height_m": 512,
+      "ventilation_coefficient": 1193,
+      "dispersion_category": "Severe Stagnation",
+      "inversion_status": "Strong Surface Inversion Active",
+      "air_stagnation_index": 85,
+      "synoptic_overview": "Calm riverine moisture boundary layer with dense morning haze. Particulates trapped under low winter inversion ceiling (510 m).",
+      "air_mass_trajectory": "Coal transit & industrial foundry plumes from Howrah & Asansol drifting along Hooghly river valley."
+    },
+    "wind_rose": [
+      {
+        "cardinal": "N",
+        "angle": 0,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "NNE",
+        "angle": 22.5,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "NE",
+        "angle": 45,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "ENE",
+        "angle": 67.5,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "E",
+        "angle": 90,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "ESE",
+        "angle": 112.5,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "SE",
+        "angle": 135,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "SSE",
+        "angle": 157.5,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "S",
+        "angle": 180,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "SSW",
+        "angle": 202.5,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "SW",
+        "angle": 225,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "WSW",
+        "angle": 247.5,
+        "frequency_pct": 1.5,
+        "avg_speed_kmh": 6.9
+      },
+      {
+        "cardinal": "W",
+        "angle": 270,
+        "frequency_pct": 3.3,
+        "avg_speed_kmh": 7
+      },
+      {
+        "cardinal": "WNW",
+        "angle": 292.5,
+        "frequency_pct": 12.5,
+        "avg_speed_kmh": 7.8
+      },
+      {
+        "cardinal": "NW",
+        "angle": 315,
+        "frequency_pct": 27.9,
+        "avg_speed_kmh": 9.2
+      },
+      {
+        "cardinal": "NNW",
+        "angle": 337.5,
+        "frequency_pct": 37.8,
+        "avg_speed_kmh": 10.1
+      }
+    ],
+    "hourly_forecast": [
+      {
+        "hour": "00:00",
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.4,
+        "temperature_c": 21,
+        "relative_humidity_pct": 92,
+        "boundary_layer_height_m": 333,
+        "ventilation_index": 555,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "02:00",
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.4,
+        "temperature_c": 21,
+        "relative_humidity_pct": 92,
+        "boundary_layer_height_m": 333,
+        "ventilation_index": 555,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "04:00",
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.4,
+        "temperature_c": 21,
+        "relative_humidity_pct": 92,
+        "boundary_layer_height_m": 333,
+        "ventilation_index": 555,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "06:00",
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.4,
+        "temperature_c": 21,
+        "relative_humidity_pct": 92,
+        "boundary_layer_height_m": 333,
+        "ventilation_index": 555,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "08:00",
+        "wind_speed_kmh": 11.3,
+        "wind_gusts_kmh": 15.8,
+        "temperature_c": 28.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 742,
+        "ventilation_index": 2329,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "10:00",
+        "wind_speed_kmh": 11.3,
+        "wind_gusts_kmh": 15.8,
+        "temperature_c": 28.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 742,
+        "ventilation_index": 2329,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "12:00",
+        "wind_speed_kmh": 11.3,
+        "wind_gusts_kmh": 15.8,
+        "temperature_c": 28.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 742,
+        "ventilation_index": 2329,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "14:00",
+        "wind_speed_kmh": 11.3,
+        "wind_gusts_kmh": 15.8,
+        "temperature_c": 28.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 742,
+        "ventilation_index": 2329,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "16:00",
+        "wind_speed_kmh": 11.3,
+        "wind_gusts_kmh": 15.8,
+        "temperature_c": 28.5,
+        "relative_humidity_pct": 66,
+        "boundary_layer_height_m": 742,
+        "ventilation_index": 2329,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "18:00",
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.4,
+        "temperature_c": 21,
+        "relative_humidity_pct": 92,
+        "boundary_layer_height_m": 333,
+        "ventilation_index": 555,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "20:00",
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.4,
+        "temperature_c": 21,
+        "relative_humidity_pct": 92,
+        "boundary_layer_height_m": 333,
+        "ventilation_index": 555,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "22:00",
+        "wind_speed_kmh": 6,
+        "wind_gusts_kmh": 8.4,
+        "temperature_c": 21,
+        "relative_humidity_pct": 92,
+        "boundary_layer_height_m": 333,
+        "ventilation_index": 555,
+        "dispersion_quality": "Severe Stagnation"
+      }
+    ],
+    "stations": [
+      {
+        "cell_id": "in_kolkata_001",
+        "name": "Howrah Railway & Port (Kolkata Metropolitan)",
+        "lat": 22.585,
+        "lon": 88.342,
+        "wind_speed_kmh": 5.9,
+        "wind_gusts_kmh": 8.5,
+        "wind_cardinal": "NNW",
+        "wind_dir": 340,
+        "temperature_c": 25.3,
+        "humidity_pct": 78,
+        "boundary_layer_height": 523,
+        "ventilation_coefficient": 852,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_kolkata_002",
+        "name": "Rabindra Bharati / BT Road (Kolkata Metropolitan)",
+        "lat": 22.625,
+        "lon": 88.38,
+        "wind_speed_kmh": 6.1,
+        "wind_gusts_kmh": 8.4,
+        "wind_cardinal": "NNW",
+        "wind_dir": 340,
+        "temperature_c": 24.4,
+        "humidity_pct": 77,
+        "boundary_layer_height": 520,
+        "ventilation_coefficient": 879,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_kolkata_003",
+        "name": "Taratala Industrial Area (Kolkata Metropolitan)",
+        "lat": 22.505,
+        "lon": 88.305,
+        "wind_speed_kmh": 12.7,
+        "wind_gusts_kmh": 18.9,
+        "wind_cardinal": "NNW",
+        "wind_dir": 340,
+        "temperature_c": 24.9,
+        "humidity_pct": 79,
+        "boundary_layer_height": 524,
+        "ventilation_coefficient": 1850,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_kolkata_004",
+        "name": "Victoria Memorial / Maidan (Kolkata Metropolitan)",
+        "lat": 22.545,
+        "lon": 88.342,
+        "wind_speed_kmh": 11.3,
+        "wind_gusts_kmh": 16.7,
+        "wind_cardinal": "NNW",
+        "wind_dir": 340,
+        "temperature_c": 25.1,
+        "humidity_pct": 77,
+        "boundary_layer_height": 492,
+        "ventilation_coefficient": 1540,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_kolkata_005",
+        "name": "Salt Lake Sector V (Kolkata Metropolitan)",
+        "lat": 22.575,
+        "lon": 88.435,
+        "wind_speed_kmh": 6.7,
+        "wind_gusts_kmh": 10.6,
+        "wind_cardinal": "NNW",
+        "wind_dir": 340,
+        "temperature_c": 24.8,
+        "humidity_pct": 80,
+        "boundary_layer_height": 503,
+        "ventilation_coefficient": 941,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_kolkata_006",
+        "name": "Jadavpur University Zone (Kolkata Metropolitan)",
+        "lat": 22.495,
+        "lon": 88.37,
+        "wind_speed_kmh": 13,
+        "wind_gusts_kmh": 20.6,
+        "wind_cardinal": "NNW",
+        "wind_dir": 340,
+        "temperature_c": 25.9,
+        "humidity_pct": 77,
+        "boundary_layer_height": 528,
+        "ventilation_coefficient": 1911,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_kolkata_007",
+        "name": "Asansol Industrial Basin (Kolkata Metropolitan)",
+        "lat": 23.685,
+        "lon": 86.975,
+        "wind_speed_kmh": 5.8,
+        "wind_gusts_kmh": 8.7,
+        "wind_cardinal": "NNW",
+        "wind_dir": 340,
+        "temperature_c": 24.3,
+        "humidity_pct": 76,
+        "boundary_layer_height": 489,
+        "ventilation_coefficient": 792,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_kolkata_008",
+        "name": "Durgapur Steel City (Kolkata Metropolitan)",
+        "lat": 23.52,
+        "lon": 87.31,
+        "wind_speed_kmh": 5.4,
+        "wind_gusts_kmh": 8.4,
+        "wind_cardinal": "NNW",
+        "wind_dir": 340,
+        "temperature_c": 25,
+        "humidity_pct": 76,
+        "boundary_layer_height": 517,
+        "ventilation_coefficient": 781,
+        "dispersion_category": "Severe Stagnation"
+      }
+    ]
+  },
+  "gangetic": {
+    "region_id": "gangetic",
+    "region_name": "Indo-Gangetic Basin",
+    "data_date": "2026-11-06",
+    "current": {
+      "wind_speed_kmh": 11.7,
+      "wind_speed_ms": 3.25,
+      "wind_gusts_kmh": 22.2,
+      "wind_dir": 300,
+      "wind_cardinal": "WNW",
+      "temperature_c": 22,
+      "feels_like_c": 23.5,
+      "humidity_pct": 72,
+      "pressure_hpa": 1015,
+      "boundary_layer_height_m": 406,
+      "ventilation_coefficient": 1320,
+      "dispersion_category": "Severe Stagnation",
+      "inversion_status": "Strong Surface Inversion Active",
+      "air_stagnation_index": 83,
+      "synoptic_overview": "Extensive Indo-Gangetic valley air stagnation. Calm surface winds (<6 km/h) and low boundary layer creating a basin-wide particulate containment zone.",
+      "air_mass_trajectory": "Regional agricultural biomass and industrial stack effluents pooling across the low-elevation alluvial plain."
+    },
+    "wind_rose": [
+      {
+        "cardinal": "N",
+        "angle": 0,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 9.5
+      },
+      {
+        "cardinal": "NNE",
+        "angle": 22.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 9.5
+      },
+      {
+        "cardinal": "NE",
+        "angle": 45,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 9.5
+      },
+      {
+        "cardinal": "ENE",
+        "angle": 67.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 9.5
+      },
+      {
+        "cardinal": "E",
+        "angle": 90,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 9.5
+      },
+      {
+        "cardinal": "ESE",
+        "angle": 112.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 9.5
+      },
+      {
+        "cardinal": "SE",
+        "angle": 135,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 9.5
+      },
+      {
+        "cardinal": "SSE",
+        "angle": 157.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 9.5
+      },
+      {
+        "cardinal": "S",
+        "angle": 180,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 9.5
+      },
+      {
+        "cardinal": "SSW",
+        "angle": 202.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 9.5
+      },
+      {
+        "cardinal": "SW",
+        "angle": 225,
+        "frequency_pct": 1.7,
+        "avg_speed_kmh": 9.7
+      },
+      {
+        "cardinal": "WSW",
+        "angle": 247.5,
+        "frequency_pct": 6.9,
+        "avg_speed_kmh": 10.6
+      },
+      {
+        "cardinal": "W",
+        "angle": 270,
+        "frequency_pct": 17.2,
+        "avg_speed_kmh": 12.4
+      },
+      {
+        "cardinal": "WNW",
+        "angle": 292.5,
+        "frequency_pct": 26,
+        "avg_speed_kmh": 13.9
+      },
+      {
+        "cardinal": "NW",
+        "angle": 315,
+        "frequency_pct": 24,
+        "avg_speed_kmh": 13.5
+      },
+      {
+        "cardinal": "NNW",
+        "angle": 337.5,
+        "frequency_pct": 13.4,
+        "avg_speed_kmh": 11.7
+      }
+    ],
+    "hourly_forecast": [
+      {
+        "hour": "00:00",
+        "wind_speed_kmh": 8.4,
+        "wind_gusts_kmh": 11.8,
+        "temperature_c": 18,
+        "relative_humidity_pct": 86,
+        "boundary_layer_height_m": 264,
+        "ventilation_index": 616,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "02:00",
+        "wind_speed_kmh": 8.4,
+        "wind_gusts_kmh": 11.8,
+        "temperature_c": 18,
+        "relative_humidity_pct": 86,
+        "boundary_layer_height_m": 264,
+        "ventilation_index": 616,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "04:00",
+        "wind_speed_kmh": 8.4,
+        "wind_gusts_kmh": 11.8,
+        "temperature_c": 18,
+        "relative_humidity_pct": 86,
+        "boundary_layer_height_m": 264,
+        "ventilation_index": 616,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "06:00",
+        "wind_speed_kmh": 8.4,
+        "wind_gusts_kmh": 11.8,
+        "temperature_c": 18,
+        "relative_humidity_pct": 86,
+        "boundary_layer_height_m": 264,
+        "ventilation_index": 616,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "08:00",
+        "wind_speed_kmh": 15.8,
+        "wind_gusts_kmh": 22.1,
+        "temperature_c": 25.5,
+        "relative_humidity_pct": 60,
+        "boundary_layer_height_m": 589,
+        "ventilation_index": 2585,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "10:00",
+        "wind_speed_kmh": 15.8,
+        "wind_gusts_kmh": 22.1,
+        "temperature_c": 25.5,
+        "relative_humidity_pct": 60,
+        "boundary_layer_height_m": 589,
+        "ventilation_index": 2585,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "12:00",
+        "wind_speed_kmh": 15.8,
+        "wind_gusts_kmh": 22.1,
+        "temperature_c": 25.5,
+        "relative_humidity_pct": 60,
+        "boundary_layer_height_m": 589,
+        "ventilation_index": 2585,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "14:00",
+        "wind_speed_kmh": 15.8,
+        "wind_gusts_kmh": 22.1,
+        "temperature_c": 25.5,
+        "relative_humidity_pct": 60,
+        "boundary_layer_height_m": 589,
+        "ventilation_index": 2585,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "16:00",
+        "wind_speed_kmh": 15.8,
+        "wind_gusts_kmh": 22.1,
+        "temperature_c": 25.5,
+        "relative_humidity_pct": 60,
+        "boundary_layer_height_m": 589,
+        "ventilation_index": 2585,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "18:00",
+        "wind_speed_kmh": 8.4,
+        "wind_gusts_kmh": 11.8,
+        "temperature_c": 18,
+        "relative_humidity_pct": 86,
+        "boundary_layer_height_m": 264,
+        "ventilation_index": 616,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "20:00",
+        "wind_speed_kmh": 8.4,
+        "wind_gusts_kmh": 11.8,
+        "temperature_c": 18,
+        "relative_humidity_pct": 86,
+        "boundary_layer_height_m": 264,
+        "ventilation_index": 616,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "22:00",
+        "wind_speed_kmh": 8.4,
+        "wind_gusts_kmh": 11.8,
+        "temperature_c": 18,
+        "relative_humidity_pct": 86,
+        "boundary_layer_height_m": 264,
+        "ventilation_index": 616,
+        "dispersion_quality": "Severe Stagnation"
+      }
+    ],
+    "stations": [
+      {
+        "cell_id": "in_gangetic_001",
+        "name": "Kanpur Jajmau Industrial (Indo-Gangetic Basin)",
+        "lat": 26.435,
+        "lon": 80.395,
+        "wind_speed_kmh": 11.5,
+        "wind_gusts_kmh": 17.3,
+        "wind_cardinal": "WNW",
+        "wind_dir": 300,
+        "temperature_c": 22.7,
+        "humidity_pct": 75,
+        "boundary_layer_height": 408,
+        "ventilation_coefficient": 1302,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_gangetic_002",
+        "name": "Kanpur Kalyanpur (Indo-Gangetic Basin)",
+        "lat": 26.495,
+        "lon": 80.265,
+        "wind_speed_kmh": 12.8,
+        "wind_gusts_kmh": 18,
+        "wind_cardinal": "WNW",
+        "wind_dir": 300,
+        "temperature_c": 21.1,
+        "humidity_pct": 74,
+        "boundary_layer_height": 407,
+        "ventilation_coefficient": 1449,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_gangetic_003",
+        "name": "Lucknow Charbagh Railway (Indo-Gangetic Basin)",
+        "lat": 26.83,
+        "lon": 80.92,
+        "wind_speed_kmh": 12.7,
+        "wind_gusts_kmh": 18.1,
+        "wind_cardinal": "WNW",
+        "wind_dir": 300,
+        "temperature_c": 21.2,
+        "humidity_pct": 72,
+        "boundary_layer_height": 398,
+        "ventilation_coefficient": 1405,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_gangetic_004",
+        "name": "Lucknow Talkatora MIDC (Indo-Gangetic Basin)",
+        "lat": 26.825,
+        "lon": 80.885,
+        "wind_speed_kmh": 14,
+        "wind_gusts_kmh": 22.2,
+        "wind_cardinal": "WNW",
+        "wind_dir": 300,
+        "temperature_c": 21.7,
+        "humidity_pct": 74,
+        "boundary_layer_height": 399,
+        "ventilation_coefficient": 1548,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_gangetic_005",
+        "name": "Lucknow Gomti Nagar (Indo-Gangetic Basin)",
+        "lat": 26.855,
+        "lon": 81.005,
+        "wind_speed_kmh": 11.1,
+        "wind_gusts_kmh": 17.6,
+        "wind_cardinal": "WNW",
+        "wind_dir": 300,
+        "temperature_c": 21.6,
+        "humidity_pct": 70,
+        "boundary_layer_height": 399,
+        "ventilation_coefficient": 1229,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_gangetic_006",
+        "name": "Patna Danapur Cantonment (Indo-Gangetic Basin)",
+        "lat": 25.635,
+        "lon": 85.045,
+        "wind_speed_kmh": 12.4,
+        "wind_gusts_kmh": 17.4,
+        "wind_cardinal": "WNW",
+        "wind_dir": 300,
+        "temperature_c": 21.6,
+        "humidity_pct": 72,
+        "boundary_layer_height": 418,
+        "ventilation_coefficient": 1442,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_gangetic_007",
+        "name": "Patna City (Old Town) (Indo-Gangetic Basin)",
+        "lat": 25.605,
+        "lon": 85.185,
+        "wind_speed_kmh": 14.1,
+        "wind_gusts_kmh": 20.2,
+        "wind_cardinal": "WNW",
+        "wind_dir": 300,
+        "temperature_c": 22.5,
+        "humidity_pct": 71,
+        "boundary_layer_height": 416,
+        "ventilation_coefficient": 1631,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_gangetic_008",
+        "name": "Varanasi Bhelupur (Indo-Gangetic Basin)",
+        "lat": 25.295,
+        "lon": 82.995,
+        "wind_speed_kmh": 5.4,
+        "wind_gusts_kmh": 8.3,
+        "wind_cardinal": "WNW",
+        "wind_dir": 300,
+        "temperature_c": 22.9,
+        "humidity_pct": 70,
+        "boundary_layer_height": 401,
+        "ventilation_coefficient": 602,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_gangetic_009",
+        "name": "Agra Taj Trapezium Zone (Indo-Gangetic Basin)",
+        "lat": 27.175,
+        "lon": 78.042,
+        "wind_speed_kmh": 11.4,
+        "wind_gusts_kmh": 16.7,
+        "wind_cardinal": "WNW",
+        "wind_dir": 300,
+        "temperature_c": 22.6,
+        "humidity_pct": 70,
+        "boundary_layer_height": 406,
+        "ventilation_coefficient": 1283,
+        "dispersion_category": "Severe Stagnation"
+      }
+    ]
+  },
+  "hyderabad": {
+    "region_id": "hyderabad",
+    "region_name": "Hyderabad Cyberabad",
+    "data_date": "2026-11-06",
+    "current": {
+      "wind_speed_kmh": 10.9,
+      "wind_speed_ms": 3.04,
+      "wind_gusts_kmh": 21,
+      "wind_dir": 120,
+      "wind_cardinal": "ESE",
+      "temperature_c": 27,
+      "feels_like_c": 26.5,
+      "humidity_pct": 51,
+      "pressure_hpa": 960,
+      "boundary_layer_height_m": 772,
+      "ventilation_coefficient": 2347,
+      "dispersion_category": "Moderate Dispersion",
+      "inversion_status": "Weak Inversion",
+      "air_stagnation_index": 72,
+      "synoptic_overview": "Moderate south-easterly Deccan breeze with dry continental conditions. Moderate vertical mixing depth (780 m).",
+      "air_mass_trajectory": "Bulk drug and pharmaceutical emissions from Sanathnagar & Pashamylaram dispersing along the ring road corridor."
+    },
+    "wind_rose": [
+      {
+        "cardinal": "N",
+        "angle": 0,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.9
+      },
+      {
+        "cardinal": "NNE",
+        "angle": 22.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.9
+      },
+      {
+        "cardinal": "NE",
+        "angle": 45,
+        "frequency_pct": 1.6,
+        "avg_speed_kmh": 9
+      },
+      {
+        "cardinal": "ENE",
+        "angle": 67.5,
+        "frequency_pct": 6.6,
+        "avg_speed_kmh": 9.8
+      },
+      {
+        "cardinal": "E",
+        "angle": 90,
+        "frequency_pct": 16.6,
+        "avg_speed_kmh": 11.5
+      },
+      {
+        "cardinal": "ESE",
+        "angle": 112.5,
+        "frequency_pct": 25.2,
+        "avg_speed_kmh": 13
+      },
+      {
+        "cardinal": "SE",
+        "angle": 135,
+        "frequency_pct": 23.2,
+        "avg_speed_kmh": 12.6
+      },
+      {
+        "cardinal": "SSE",
+        "angle": 157.5,
+        "frequency_pct": 13,
+        "avg_speed_kmh": 10.9
+      },
+      {
+        "cardinal": "S",
+        "angle": 180,
+        "frequency_pct": 4.4,
+        "avg_speed_kmh": 9.5
+      },
+      {
+        "cardinal": "SSW",
+        "angle": 202.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.9
+      },
+      {
+        "cardinal": "SW",
+        "angle": 225,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.9
+      },
+      {
+        "cardinal": "WSW",
+        "angle": 247.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.9
+      },
+      {
+        "cardinal": "W",
+        "angle": 270,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.9
+      },
+      {
+        "cardinal": "WNW",
+        "angle": 292.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.9
+      },
+      {
+        "cardinal": "NW",
+        "angle": 315,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.9
+      },
+      {
+        "cardinal": "NNW",
+        "angle": 337.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 8.9
+      }
+    ],
+    "hourly_forecast": [
+      {
+        "hour": "00:00",
+        "wind_speed_kmh": 7.8,
+        "wind_gusts_kmh": 10.9,
+        "temperature_c": 23,
+        "relative_humidity_pct": 65,
+        "boundary_layer_height_m": 502,
+        "ventilation_index": 1088,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "02:00",
+        "wind_speed_kmh": 7.8,
+        "wind_gusts_kmh": 10.9,
+        "temperature_c": 23,
+        "relative_humidity_pct": 65,
+        "boundary_layer_height_m": 502,
+        "ventilation_index": 1088,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "04:00",
+        "wind_speed_kmh": 7.8,
+        "wind_gusts_kmh": 10.9,
+        "temperature_c": 23,
+        "relative_humidity_pct": 65,
+        "boundary_layer_height_m": 502,
+        "ventilation_index": 1088,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "06:00",
+        "wind_speed_kmh": 7.8,
+        "wind_gusts_kmh": 10.9,
+        "temperature_c": 23,
+        "relative_humidity_pct": 65,
+        "boundary_layer_height_m": 502,
+        "ventilation_index": 1088,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "08:00",
+        "wind_speed_kmh": 14.7,
+        "wind_gusts_kmh": 20.6,
+        "temperature_c": 30.5,
+        "relative_humidity_pct": 39,
+        "boundary_layer_height_m": 1119,
+        "ventilation_index": 4569,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "10:00",
+        "wind_speed_kmh": 14.7,
+        "wind_gusts_kmh": 20.6,
+        "temperature_c": 30.5,
+        "relative_humidity_pct": 39,
+        "boundary_layer_height_m": 1119,
+        "ventilation_index": 4569,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "12:00",
+        "wind_speed_kmh": 14.7,
+        "wind_gusts_kmh": 20.6,
+        "temperature_c": 30.5,
+        "relative_humidity_pct": 39,
+        "boundary_layer_height_m": 1119,
+        "ventilation_index": 4569,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "14:00",
+        "wind_speed_kmh": 14.7,
+        "wind_gusts_kmh": 20.6,
+        "temperature_c": 30.5,
+        "relative_humidity_pct": 39,
+        "boundary_layer_height_m": 1119,
+        "ventilation_index": 4569,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "16:00",
+        "wind_speed_kmh": 14.7,
+        "wind_gusts_kmh": 20.6,
+        "temperature_c": 30.5,
+        "relative_humidity_pct": 39,
+        "boundary_layer_height_m": 1119,
+        "ventilation_index": 4569,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "18:00",
+        "wind_speed_kmh": 7.8,
+        "wind_gusts_kmh": 10.9,
+        "temperature_c": 23,
+        "relative_humidity_pct": 65,
+        "boundary_layer_height_m": 502,
+        "ventilation_index": 1088,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "20:00",
+        "wind_speed_kmh": 7.8,
+        "wind_gusts_kmh": 10.9,
+        "temperature_c": 23,
+        "relative_humidity_pct": 65,
+        "boundary_layer_height_m": 502,
+        "ventilation_index": 1088,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "22:00",
+        "wind_speed_kmh": 7.8,
+        "wind_gusts_kmh": 10.9,
+        "temperature_c": 23,
+        "relative_humidity_pct": 65,
+        "boundary_layer_height_m": 502,
+        "ventilation_index": 1088,
+        "dispersion_quality": "Severe Stagnation"
+      }
+    ],
+    "stations": [
+      {
+        "cell_id": "in_hyderabad_001",
+        "name": "Sanathnagar Industrial Area (Hyderabad Cyberabad)",
+        "lat": 17.455,
+        "lon": 78.44,
+        "wind_speed_kmh": 8.1,
+        "wind_gusts_kmh": 11.1,
+        "wind_cardinal": "ESE",
+        "wind_dir": 120,
+        "temperature_c": 26.6,
+        "humidity_pct": 52,
+        "boundary_layer_height": 794,
+        "ventilation_coefficient": 1787,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_hyderabad_002",
+        "name": "Cherlapally Industrial Estate (Hyderabad Cyberabad)",
+        "lat": 17.475,
+        "lon": 78.605,
+        "wind_speed_kmh": 12.1,
+        "wind_gusts_kmh": 18.4,
+        "wind_cardinal": "ESE",
+        "wind_dir": 120,
+        "temperature_c": 27.6,
+        "humidity_pct": 52,
+        "boundary_layer_height": 775,
+        "ventilation_coefficient": 2612,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_hyderabad_003",
+        "name": "HITEC City Tech Corridor (Hyderabad Cyberabad)",
+        "lat": 17.445,
+        "lon": 78.375,
+        "wind_speed_kmh": 14.3,
+        "wind_gusts_kmh": 21,
+        "wind_cardinal": "ESE",
+        "wind_dir": 120,
+        "temperature_c": 27.8,
+        "humidity_pct": 48,
+        "boundary_layer_height": 763,
+        "ventilation_coefficient": 3029,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_hyderabad_004",
+        "name": "Charminar Heritage Core (Hyderabad Cyberabad)",
+        "lat": 17.36,
+        "lon": 78.475,
+        "wind_speed_kmh": 14.1,
+        "wind_gusts_kmh": 19.6,
+        "wind_cardinal": "ESE",
+        "wind_dir": 120,
+        "temperature_c": 26.4,
+        "humidity_pct": 52,
+        "boundary_layer_height": 756,
+        "ventilation_coefficient": 2971,
+        "dispersion_category": "Moderate Dispersion"
+      },
+      {
+        "cell_id": "in_hyderabad_005",
+        "name": "Pashamylaram Pharma SEZ (Hyderabad Cyberabad)",
+        "lat": 17.535,
+        "lon": 78.185,
+        "wind_speed_kmh": 8.8,
+        "wind_gusts_kmh": 12.5,
+        "wind_cardinal": "ESE",
+        "wind_dir": 120,
+        "temperature_c": 27,
+        "humidity_pct": 49,
+        "boundary_layer_height": 763,
+        "ventilation_coefficient": 1862,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_hyderabad_006",
+        "name": "Secunderabad Paradise Junction (Hyderabad Cyberabad)",
+        "lat": 17.44,
+        "lon": 78.49,
+        "wind_speed_kmh": 8.2,
+        "wind_gusts_kmh": 12.6,
+        "wind_cardinal": "ESE",
+        "wind_dir": 120,
+        "temperature_c": 26.3,
+        "humidity_pct": 51,
+        "boundary_layer_height": 778,
+        "ventilation_coefficient": 1774,
+        "dispersion_category": "Severe Stagnation"
+      }
+    ]
+  },
+  "ahmedabad": {
+    "region_id": "ahmedabad",
+    "region_name": "Ahmedabad - Gujarat Industrial",
+    "data_date": "2026-11-06",
+    "current": {
+      "wind_speed_kmh": 7.3,
+      "wind_speed_ms": 2.02,
+      "wind_gusts_kmh": 13.6,
+      "wind_dir": 260,
+      "wind_cardinal": "W",
+      "temperature_c": 28,
+      "feels_like_c": 27.5,
+      "humidity_pct": 42,
+      "pressure_hpa": 1011,
+      "boundary_layer_height_m": 751,
+      "ventilation_coefficient": 1517,
+      "dispersion_category": "Severe Stagnation",
+      "inversion_status": "Strong Surface Inversion Active",
+      "air_stagnation_index": 86,
+      "synoptic_overview": "Dry westerly Gulf breezes with strong thermal buoyancy during peak hours. High particulate resuspension potential.",
+      "air_mass_trajectory": "Chemical dye and textile emissions from Vatva GIDC and Narol industrial belt carried toward eastern residential sectors."
+    },
+    "wind_rose": [
+      {
+        "cardinal": "N",
+        "angle": 0,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6
+      },
+      {
+        "cardinal": "NNE",
+        "angle": 22.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6
+      },
+      {
+        "cardinal": "NE",
+        "angle": 45,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6
+      },
+      {
+        "cardinal": "ENE",
+        "angle": 67.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6
+      },
+      {
+        "cardinal": "E",
+        "angle": 90,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6
+      },
+      {
+        "cardinal": "ESE",
+        "angle": 112.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6
+      },
+      {
+        "cardinal": "SE",
+        "angle": 135,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6
+      },
+      {
+        "cardinal": "SSE",
+        "angle": 157.5,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6
+      },
+      {
+        "cardinal": "S",
+        "angle": 180,
+        "frequency_pct": 1.1,
+        "avg_speed_kmh": 6
+      },
+      {
+        "cardinal": "SSW",
+        "angle": 202.5,
+        "frequency_pct": 5.1,
+        "avg_speed_kmh": 6.4
+      },
+      {
+        "cardinal": "SW",
+        "angle": 225,
+        "frequency_pct": 14.2,
+        "avg_speed_kmh": 7.4
+      },
+      {
+        "cardinal": "WSW",
+        "angle": 247.5,
+        "frequency_pct": 24,
+        "avg_speed_kmh": 8.5
+      },
+      {
+        "cardinal": "W",
+        "angle": 270,
+        "frequency_pct": 24.7,
+        "avg_speed_kmh": 8.6
+      },
+      {
+        "cardinal": "WNW",
+        "angle": 292.5,
+        "frequency_pct": 15.4,
+        "avg_speed_kmh": 7.6
+      },
+      {
+        "cardinal": "NW",
+        "angle": 315,
+        "frequency_pct": 5.8,
+        "avg_speed_kmh": 6.5
+      },
+      {
+        "cardinal": "NNW",
+        "angle": 337.5,
+        "frequency_pct": 1.3,
+        "avg_speed_kmh": 6
+      }
+    ],
+    "hourly_forecast": [
+      {
+        "hour": "00:00",
+        "wind_speed_kmh": 5.3,
+        "wind_gusts_kmh": 7.4,
+        "temperature_c": 24,
+        "relative_humidity_pct": 56,
+        "boundary_layer_height_m": 488,
+        "ventilation_index": 718,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "02:00",
+        "wind_speed_kmh": 5.3,
+        "wind_gusts_kmh": 7.4,
+        "temperature_c": 24,
+        "relative_humidity_pct": 56,
+        "boundary_layer_height_m": 488,
+        "ventilation_index": 718,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "04:00",
+        "wind_speed_kmh": 5.3,
+        "wind_gusts_kmh": 7.4,
+        "temperature_c": 24,
+        "relative_humidity_pct": 56,
+        "boundary_layer_height_m": 488,
+        "ventilation_index": 718,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "06:00",
+        "wind_speed_kmh": 5.3,
+        "wind_gusts_kmh": 7.4,
+        "temperature_c": 24,
+        "relative_humidity_pct": 56,
+        "boundary_layer_height_m": 488,
+        "ventilation_index": 718,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "08:00",
+        "wind_speed_kmh": 9.9,
+        "wind_gusts_kmh": 13.9,
+        "temperature_c": 31.5,
+        "relative_humidity_pct": 30,
+        "boundary_layer_height_m": 1089,
+        "ventilation_index": 2995,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "10:00",
+        "wind_speed_kmh": 9.9,
+        "wind_gusts_kmh": 13.9,
+        "temperature_c": 31.5,
+        "relative_humidity_pct": 30,
+        "boundary_layer_height_m": 1089,
+        "ventilation_index": 2995,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "12:00",
+        "wind_speed_kmh": 9.9,
+        "wind_gusts_kmh": 13.9,
+        "temperature_c": 31.5,
+        "relative_humidity_pct": 30,
+        "boundary_layer_height_m": 1089,
+        "ventilation_index": 2995,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "14:00",
+        "wind_speed_kmh": 9.9,
+        "wind_gusts_kmh": 13.9,
+        "temperature_c": 31.5,
+        "relative_humidity_pct": 30,
+        "boundary_layer_height_m": 1089,
+        "ventilation_index": 2995,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "16:00",
+        "wind_speed_kmh": 9.9,
+        "wind_gusts_kmh": 13.9,
+        "temperature_c": 31.5,
+        "relative_humidity_pct": 30,
+        "boundary_layer_height_m": 1089,
+        "ventilation_index": 2995,
+        "dispersion_quality": "Moderate"
+      },
+      {
+        "hour": "18:00",
+        "wind_speed_kmh": 5.3,
+        "wind_gusts_kmh": 7.4,
+        "temperature_c": 24,
+        "relative_humidity_pct": 56,
+        "boundary_layer_height_m": 488,
+        "ventilation_index": 718,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "20:00",
+        "wind_speed_kmh": 5.3,
+        "wind_gusts_kmh": 7.4,
+        "temperature_c": 24,
+        "relative_humidity_pct": 56,
+        "boundary_layer_height_m": 488,
+        "ventilation_index": 718,
+        "dispersion_quality": "Severe Stagnation"
+      },
+      {
+        "hour": "22:00",
+        "wind_speed_kmh": 5.3,
+        "wind_gusts_kmh": 7.4,
+        "temperature_c": 24,
+        "relative_humidity_pct": 56,
+        "boundary_layer_height_m": 488,
+        "ventilation_index": 718,
+        "dispersion_quality": "Severe Stagnation"
+      }
+    ],
+    "stations": [
+      {
+        "cell_id": "in_ahmedabad_001",
+        "name": "Vatva GIDC Phase-IV (Ahmedabad - Gujarat Industrial)",
+        "lat": 22.955,
+        "lon": 72.635,
+        "wind_speed_kmh": 7.1,
+        "wind_gusts_kmh": 10.9,
+        "wind_cardinal": "W",
+        "wind_dir": 260,
+        "temperature_c": 28.4,
+        "humidity_pct": 41,
+        "boundary_layer_height": 746,
+        "ventilation_coefficient": 1462,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_ahmedabad_002",
+        "name": "Narol Textile Processing Zone (Ahmedabad - Gujarat Industrial)",
+        "lat": 22.975,
+        "lon": 72.585,
+        "wind_speed_kmh": 9.5,
+        "wind_gusts_kmh": 13.6,
+        "wind_cardinal": "W",
+        "wind_dir": 260,
+        "temperature_c": 27.8,
+        "humidity_pct": 42,
+        "boundary_layer_height": 749,
+        "ventilation_coefficient": 1970,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_ahmedabad_003",
+        "name": "Maninagar East (Ahmedabad - Gujarat Industrial)",
+        "lat": 22.995,
+        "lon": 72.61,
+        "wind_speed_kmh": 5.7,
+        "wind_gusts_kmh": 8.4,
+        "wind_cardinal": "W",
+        "wind_dir": 260,
+        "temperature_c": 27.7,
+        "humidity_pct": 42,
+        "boundary_layer_height": 740,
+        "ventilation_coefficient": 1177,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_ahmedabad_004",
+        "name": "Surat Pandesara GIDC (Ahmedabad - Gujarat Industrial)",
+        "lat": 21.145,
+        "lon": 72.825,
+        "wind_speed_kmh": 6.6,
+        "wind_gusts_kmh": 9.9,
+        "wind_cardinal": "W",
+        "wind_dir": 260,
+        "temperature_c": 28.5,
+        "humidity_pct": 43,
+        "boundary_layer_height": 750,
+        "ventilation_coefficient": 1373,
+        "dispersion_category": "Severe Stagnation"
+      },
+      {
+        "cell_id": "in_ahmedabad_005",
+        "name": "Ankleshwar Chemical Hub (Ahmedabad - Gujarat Industrial)",
+        "lat": 21.625,
+        "lon": 73.015,
+        "wind_speed_kmh": 7.6,
+        "wind_gusts_kmh": 10.7,
+        "wind_cardinal": "W",
+        "wind_dir": 260,
+        "temperature_c": 27.6,
+        "humidity_pct": 44,
+        "boundary_layer_height": 771,
+        "ventilation_coefficient": 1627,
+        "dispersion_category": "Severe Stagnation"
+      }
+    ]
+  }
+}

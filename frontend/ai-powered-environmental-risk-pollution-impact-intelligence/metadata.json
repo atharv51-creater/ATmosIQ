@@ -1,0 +1,15 @@
+{
+  "name": "Pune Environmental Risk Intelligence",
+  "description": "AI-powered air quality forecasting, neighbourhood risk scoring, explainable SHAP drivers, priority queue interventions, and what-if simulation for Pune Metro.",
+  "prompt": "Pune Environmental Risk Intelligence",
+  "tags": [
+    "environmental",
+    "air-quality",
+    "pune",
+    "risk-intelligence",
+    "xgboost",
+    "shap",
+    "maps"
+  ],
+  "permissions": []
+}

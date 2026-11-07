@@ -1,0 +1,651 @@
+ROLE
+You are a principal front-end architect, product designer, and data-visualization engineer.
+You build production-grade, accessible, animated dashboards with React + TypeScript and
+real map rendering. You do not produce demos with placeholder data, TODOs, or lorem ipsum.
+You write complete files, every time.
+
+MISSION
+Build the complete frontend for an "AI-Powered Environmental Risk & Pollution Impact
+Intelligence" platform for Pune, India. It visualizes air-quality risk across a 136-cell
+H3 hexagon grid, explains an XGBoost PM2.5 forecast, prioritizes interventions, and lets
+users run what-if scenarios. The app must connect to a real FastAPI backend and degrade
+gracefully to a realistic local simulation when the backend is unreachable.
+
+Deliver a flawless, animated, responsive single-page application with a live map, charts,
+tables, drawers, alerts, and a model/explainability lab. Output every file in full.
+
+────────────────────────────────────────────────────────────────────────────
+1. PRODUCT CONTEXT
+────────────────────────────────────────────────────────────────────────────
+- City: Pune Metro (PMC + PCMC), Maharashtra, India.
+- Grid: 136 H3 resolution-7 hexagons (~5 km² each).
+- Bounding box: south 18.45, west 73.72, north 18.65, east 73.95.
+- City center: 18.5204, 73.8567.
+- Data day: provided by the API (example: 2026-11-06).
+- Risk score: 100 × (0.5·hazard + 0.3·exposure + 0.2·vulnerability), range 0–100.
+- Risk classes: Low [0,25), Moderate [25,50), High [50,75), Critical [75,100].
+- Forecast horizons: now (h0), +24h (h1), +48h (h2), +72h (h3).
+- The ML component is a validated XGBoost PM2.5 forecast; SHAP explains it.
+- The backend is file-backed and returns precomputed JSON. There is no auth and no database.
+
+────────────────────────────────────────────────────────────────────────────
+2. NON-NEGOTIABLE QUALITY BAR
+────────────────────────────────────────────────────────────────────────────
+- Production quality: no placeholders, no "TODO", no lorem ipsum, no dead links.
+- TypeScript strict mode; no `any` unless unavoidable and justified.
+- Zero console errors/warnings in normal operation.
+- Every visible number is either from the API or explicitly marked as simulated.
+- Works against the real API; works in offline/demo mode when the API is down.
+- Fully responsive: 360px phone, 768px tablet, 1440px desktop, ultrawide.
+- Accessible: keyboard navigable, visible focus states, ARIA labels, prefers-reduced-motion.
+- Fast: map interaction ≥ 50fps on a mid-range laptop; no layout shift; lazy-load heavy routes.
+- Consistent visual language across every screen.
+
+────────────────────────────────────────────────────────────────────────────
+3. TECH STACK (use exactly this unless a library is unavailable)
+────────────────────────────────────────────────────────────────────────────
+- React 19 + TypeScript + Vite.
+- Tailwind CSS for styling (v3.4 config or v4 with @tailwindcss/vite).
+- Framer Motion for animation and layout transitions.
+- TanStack Query (@tanstack/react-query) for server state.
+- Zustand for UI/global state.
+- React Router for routing.
+- MapLibre GL JS via react-map-gl/maplibre (or maplibre-gl directly).
+- Recharts for line/area/bar/radar charts (or visx if you prefer; keep it consistent).
+- lucide-react for icons.
+- h3-js for generating the hex grid in simulation mode.
+- clsx + tailwind-merge for class composition.
+- date-fns for dates.
+- No UI kit that hides styling (no MUI/AntD/Chakra). Build the design system yourself.
+
+Environment:
+- API base URL: import.meta.env.VITE_API_BASE_URL, default "http://localhost:8000".
+- Provide .env.example with VITE_API_BASE_URL=http://localhost:8000.
+- Provide npm scripts: dev, build, preview, lint, typecheck, test.
+
+────────────────────────────────────────────────────────────────────────────
+4. BACKEND API CONTRACT (do not invent endpoints)
+────────────────────────────────────────────────────────────────────────────
+Base URL: VITE_API_BASE_URL (default http://localhost:8000)
+CORS is open. All responses are JSON except zone GeoJSON (also JSON).
+Errors: 404 unknown zone/region, 422 invalid horizon, 503 data not ready.
+
+GET /health
+  -> { status: "ok" | "no_data", synthetic_data: boolean, data_dir: string,
+       data_date?: "YYYY-MM-DD" }
+
+GET /regions
+  -> { regions: ["pune"] }
+
+GET /summary?region=pune
+  -> { city, data_date, weights: {hazard, exposure, vulnerability},
+       class_counts_now: { Low?, Moderate?, High?, Critical? },
+       mean_score_now: number, mean_score_h3: number,
+       population_in_high_or_critical: number }
+
+GET /zones?region=pune&horizon=0|24|48|72&min_class=Low|Moderate|High|Critical
+           &w_hazard=&w_exposure=&w_vulnerability=
+  -> GeoJSON FeatureCollection with 136 features and a `meta` object:
+     {
+       type: "FeatureCollection",
+       features: [{
+         type: "Feature",
+         geometry: { type: "Polygon", coordinates: number[][][] },
+         properties: {
+           cell_id: string, horizon_days: 0|1|2|3, date: "YYYY-MM-DD",
+           score: number, risk_class: "Low"|"Moderate"|"High"|"Critical",
+           hazard: number, exposure: number, vulnerability: number,
+           pm25: number, aqi_est: number, population: number,
+           top_factors: string[], forecast_drivers: Driver[]
+         }
+       }],
+       meta: { horizon_days, weights, custom_weights: boolean, data_date, count }
+     }
+  NOTE: horizon is in hours (0/24/48/72). Weight params override the score server-side.
+
+GET /priority-queue?region=pune&horizon=&limit=&risk_class=
+                    &w_hazard=&w_exposure=&w_vulnerability=
+  -> PriorityRow[]
+     {
+       cell_id, lat, lon, pop, industry_frac, emit_5km,
+       top_factors: string[],
+       score_now, score_h1, score_h2, score_h3, score_ranked,
+       trend, risk_class, action, rank, priority_index
+     }
+  Omitting horizon ranks by the worst of now..+72h.
+
+GET /zones/{cell_id}
+  -> {
+       cell_id, geometry, current: ZoneProperties,
+       centroid: { lat, lon },
+       priority: PriorityRow,
+       scores: { h0, h1, h2, h3 },
+       components: { hazard, exposure, vulnerability },
+       points: { pts_pollution, pts_emission, pts_population,
+                 pts_wind, pts_green, pts_heat },
+       top_factors: string[],
+       forecast_drivers: Driver[],
+       history: { dates: string[], pm25: number[],
+                  forecast_dates: string[], forecast_pm25: number[] }
+     }
+
+GET /forecast/{cell_id}
+  -> {
+       cell_id,
+       history: { dates: string[], pm25: number[] },
+       forecast: [{ horizon_days: 1|2|3, date, pm25, score, risk_class }],
+       forecast_drivers: Driver[]
+     }
+
+GET /wind?region=pune
+  -> [{ cell_id, lat, lon, wind_u, wind_v, wind_speed, wind_dir }]
+
+GET /alerts?min_level=watch|warning|critical
+  -> [{
+       alert_id, zone_id, level: "watch"|"warning"|"critical",
+       message, created_at, score_now, score_peak, population,
+       drivers: string[], recommended_action, rank
+     }]
+
+POST /alerts/notify
+  body: { channel: "telegram"|"email", min_level, dry_run: boolean }
+  -> dry_run: { sent: false, count, text }
+     live:    { sent: boolean, count, channel }
+
+POST /weights
+  body: { hazard: number, exposure: number, vulnerability: number,
+          horizon: 0..3, top: 1..100 }
+  -> {
+       weights: { hazard, exposure, vulnerability },
+       horizon_days, class_counts: Record<RiskClass, number>, mean_score,
+       zones: ZonesFeatureCollection,
+       priority_queue: PriorityRow[]
+     }
+
+GET /model/metrics
+  -> {
+       time_cut, n_features, xgboost: boolean,
+       results: {
+         h1: { persistence, random_forest, xgboost, spatial_holdout },
+         h2: { ... }, h3: { ... }
+       }
+     }
+  Each model object: { MAE, RMSE, R2, AQI_category_acc }.
+
+GET /model/shap
+  -> { method: "shap", global: [{ feature, label, mean_abs }] }
+
+Shared type:
+  Driver = { feature: string, label: string, value: number,
+             shap: number, text: string }
+
+Optional static asset (not an API): /data/emitters.json is an array of
+  [lat, lon, weight]. Render subtle emitter dots only if the file exists.
+
+────────────────────────────────────────────────────────────────────────────
+5. EXACT DATA SHAPES (use these for TypeScript types and fixtures)
+────────────────────────────────────────────────────────────────────────────
+RiskClass = "Low" | "Moderate" | "High" | "Critical"
+
+ZoneProperties example:
+  {
+    "cell_id": "876088400ffffff",
+    "horizon_days": 0,
+    "date": "2026-11-06",
+    "score": 50.7,
+    "risk_class": "High",
+    "hazard": 0.323,
+    "exposure": 0.618,
+    "vulnerability": 0.801,
+    "pm25": 34.2,
+    "aqi_est": 57,
+    "population": 55084,
+    "top_factors": ["Low green cover (+12)", "Dense population (+9)",
+                    "Wind carrying pollution from emitters (+9)"],
+    "forecast_drivers": [
+      { "feature": "pm25", "label": "today's PM2.5", "value": 34.2,
+        "shap": 4.45, "text": "today's PM2.5 (+4.4 ug/m3)" }
+    ]
+  }
+
+PriorityRow example:
+  {
+    "cell_id": "87608850effffff", "lat": 18.52415, "lon": 73.84302,
+    "pop": 417085.4, "industry_frac": 0.00273, "emit_5km": 29.64,
+    "top_factors": ["Dense population (+15)", "Low green cover (+12)",
+                    "Wind carrying pollution from emitters (+9)"],
+    "score_now": 53.8, "score_h1": 55.2, "score_h2": 54.5, "score_h3": 54.1,
+    "score_ranked": 55.2, "trend": 0.3, "risk_class": "High",
+    "action": "Inspect industrial emitters within 5 km; increase monitoring frequency",
+    "rank": 1, "priority_index": 100.0
+  }
+
+ZoneDetail example:
+  {
+    "cell_id": "876088400ffffff",
+    "geometry": { "type": "Polygon", "coordinates": [[[73.7779,18.6120], ...]] },
+    "current": { ...ZoneProperties },
+    "centroid": { "lat": 18.614, "lon": 73.766 },
+    "priority": { ...PriorityRow },
+    "scores": { "h0": 50.7, "h1": 51.4, "h2": 51.1, "h3": 50.4 },
+    "components": { "hazard": 0.323, "exposure": 0.618, "vulnerability": 0.801 },
+    "points": { "pts_pollution": 7.6, "pts_emission": 8.6,
+                "pts_population": 9.3, "pts_wind": 9.3,
+                "pts_green": 12.0, "pts_heat": 4.0 },
+    "top_factors": ["Low green cover (+12)", "Dense population (+9)"],
+    "forecast_drivers": [ ...Driver ],
+    "history": {
+      "dates": ["2026-10-08", ..., "2026-11-06"],
+      "pm25": [35.3, 32.9, ...],
+      "forecast_dates": ["2026-11-07", "2026-11-08", "2026-11-09"],
+      "forecast_pm25": [37.0, 35.7, 32.7]
+    }
+  }
+
+Summary example:
+  { "city": "Pune Metro (PMC + PCMC)", "data_date": "2026-11-06",
+    "weights": { "hazard": 0.5, "exposure": 0.3, "vulnerability": 0.2 },
+    "class_counts_now": { "Moderate": 117, "High": 17, "Low": 2 },
+    "mean_score_now": 41.2, "mean_score_h3": 41.0,
+    "population_in_high_or_critical": 4535423 }
+
+Metrics example:
+  { "time_cut": "2026-04-14", "n_features": 43, "xgboost": true,
+    "results": {
+      "h1": {
+        "persistence": { "MAE": 3.43, "RMSE": 5.29, "R2": 0.836, "AQI_category_acc": 0.91 },
+        "random_forest": { "MAE": 3.88, "RMSE": 5.79, "R2": 0.804, "AQI_category_acc": 0.891 },
+        "xgboost": { "MAE": 3.35, "RMSE": 5.03, "R2": 0.852, "AQI_category_acc": 0.914 },
+        "spatial_holdout": { "MAE": 3.42, "RMSE": 5.03, "R2": 0.829, "AQI_category_acc": 0.907 }
+      },
+      "h2": { ... }, "h3": { ... }
+    } }
+
+SHAP global example:
+  { "method": "shap",
+    "global": [{ "feature": "pm25", "label": "today's PM2.5", "mean_abs": 6.595 }] }
+
+Wind example:
+  { "cell_id": "876088400ffffff", "lat": 18.614, "lon": 73.766,
+    "wind_u": -1.431, "wind_v": -0.634, "wind_speed": 1.694, "wind_dir": 66.121 }
+
+────────────────────────────────────────────────────────────────────────────
+6. INFORMATION ARCHITECTURE
+────────────────────────────────────────────────────────────────────────────
+Persistent app shell:
+- Left sidebar (collapsible on mobile as a bottom nav or sheet) with:
+  Command Center, Risk Map, Priority Queue, Model Lab, Alerts, What-If, Data.
+- Top bar: product mark, "Pune Metro", data date, connection status pill
+  (Live API / Demo Simulation), global horizon control (Now, +24h, +48h, +72h),
+  search (zone id or rank), refresh, theme toggle, alert bell with badge count.
+- Command palette: Cmd/Ctrl+K to jump to zones, pages, and actions.
+- Toast/notification region (aria-live).
+
+Routes:
+  /                 -> Command Center
+  /map              -> Live Risk Map
+  /priority         -> Priority Queue
+  /zones/:cellId    -> Zone Intelligence (also opens as a drawer over the map)
+  /model            -> Forecast & Model Lab
+  /alerts           -> Alerts Center
+  /what-if          -> What-If Simulator
+  /data             -> Data & Methodology
+  *                 -> polished 404 with return link
+
+────────────────────────────────────────────────────────────────────────────
+7. SCREEN REQUIREMENTS
+────────────────────────────────────────────────────────────────────────────
+A) COMMAND CENTER (/) — the "hero" dashboard
+- Four animated KPI cards: Mean Risk Score, High+Critical Zones, Population in
+  High/Critical, Active Alerts. Count-up on mount, subtle gradient glow, sparkline
+  or ring indicator, trend delta where derivable.
+- Risk distribution: stacked horizontal bar or donut for class_counts_now with
+  legend, animated segments, and percentage labels.
+- A compact live map preview (same map component, non-interactive controls,
+  auto-fit to Pune) with a "Open full map" action.
+- Top 5 priority zones as animated list rows: rank, zone id (monospace), score,
+  class chip, population, sparkline of score_now..h3, action snippet; click opens
+  the zone drawer and flies the map.
+- Latest alerts preview (3–5) with severity color rail and time.
+- Model health strip: h1 XGBoost MAE/R2 vs persistence, "validated on time split",
+  link to Model Lab.
+- Data freshness footer: data_date, last fetch time, auto-refresh countdown.
+
+B) LIVE RISK MAP (/map) — the centerpiece
+- Full-bleed MapLibre map, dark basemap, hex choropleth of the selected horizon.
+- Horizon control: Now / +24h / +48h / +72h as a segmented control plus a
+  Play/Pause button that animates h0 -> h1 -> h2 -> h3 on a loop (1.2s per step).
+  During playback show an animated progress ring and the active date.
+- Color scale tied strictly to risk classes:
+    Low #2DD4BF, Moderate #FACC15, High #FB923C, Critical #F43F5E.
+  Use fill-opacity ~0.55; hover raises opacity; selected has a white glowing outline.
+- Hover: cursor pointer, tooltip/popup with cell id, score, class, PM2.5, population,
+  top 2 drivers; animate the tooltip in (fade + 8px rise).
+- Click: select hex, flyTo with 600ms ease, open right-side Zone drawer.
+- Wind overlay: per-cell arrows (line + triangle symbol) rotated by wind_dir and
+  scaled by wind_speed, low-opacity; optional subtle animated particle stream.
+  Toggle in a floating map control; pause when tab hidden; respect reduced motion.
+- Optional emitter dots from /data/emitters.json if present; toggle in controls.
+- Floating glass controls: layer toggles (zones, wind, emitters), basemap style,
+  reset view, fullscreen, legend (collapsible), and a scale bar.
+- Legend shows class thresholds and the current horizon date.
+- Filters: min risk class chips; reset; active filter count.
+- URL state: horizon and selected zone reflected in query params so views are shareable.
+- Loading: map skeleton with shimmer; errors: inline retry card, never a blank screen.
+
+C) PRIORITY QUEUE (/priority)
+- Virtualized table (136 rows) with sticky header: Rank, Zone, Class, Score
+  (now/peak), Trend (arrow + value), Population, Emitters 5km, Recommended action.
+- Sortable columns; filter by risk_class and min score; horizon selector changes
+  score_ranked; limit control.
+- Row hover reveals a "View on map" action; click opens zone drawer.
+- Inline mini bar for priority_index.
+- Export current view to CSV (client-side only).
+- Empty state when filters exclude everything.
+
+D) ZONE INTELLIGENCE (/zones/:cellId and drawer)
+- Header: cell id (monospace, copy button), class chip, score gauge (radial SVG,
+  animated sweep), date, coordinates, population.
+- Score decomposition: stacked bar or radar for hazard/exposure/vulnerability,
+  with the weights shown; animated segments.
+- "Why this score": point breakdown from `points` (pollution, emission, population,
+  wind, green, heat) as horizontal bars with values and an explanatory caption.
+- SHAP forecast drivers: diverging horizontal bars (positive red/orange, negative
+  teal/green), animated widths, tooltip with feature value; fall back to
+  forecast_drivers[].text when shap is absent.
+- PM2.5 trend: 30-day area chart + 3-day dashed forecast with a vertical "today"
+  marker, WHO 15 µg/m³ reference line, and an interactive tooltip. Forecast points
+  colored by predicted risk class.
+- Horizon score strip: h0..h3 mini cards with class colors; clicking updates the map
+  horizon and the chart focus.
+- Top factors as chips with plus values.
+- Recommended action callout.
+- Actions: "Fly to on map", "Copy link", "Add to watchlist" (localStorage).
+- Drawer must be dismissible (Esc, backdrop, close), trap focus, and restore focus.
+
+E) FORECAST & MODEL LAB (/model)
+- Header with model summary and validation time cut.
+- Horizon tabs h1/h2/h3.
+- Comparison table/cards for persistence, random forest, XGBoost, spatial holdout:
+  MAE, RMSE, R2, AQI class accuracy. Highlight the best per metric; animate the
+  winning values. Make clear XGBoost is the deployed model.
+- Bar/grouped chart comparing MAE and R2 across models for the active horizon.
+- Global SHAP importance: horizontal bar chart of `/model/shap` with labels and
+  mean_abs, animated on mount, sorted descending; explanatory note.
+- "How to read this" panel: short methodology text (regional air quality input,
+  local exposure from population/emitters/wind/green, validated PM2.5 forecast,
+  composite risk score with no ground-truth label).
+- A picker to load any zone's forecast (search by cell id + top zones) and show
+  the same forecast chart used in the drawer.
+
+F) ALERTS CENTER (/alerts)
+- Segmented filter: All / Watch / Warning / Critical, with counts.
+- Alert cards grouped by level, color-coded rail, icon, zone, message, score now vs
+  peak, population, drivers, recommended action, and a "View zone" action.
+- Sort by severity then rank; relative time; data date.
+- Notification composer: choose channel (telegram/email), min level, dry run;
+  POST /alerts/notify; show the returned text in a preview panel and toast the result.
+  If the backend returns 503 (not configured), show a friendly inline explanation.
+- Empty state: "No active alerts" with a calm illustration.
+
+G) WHAT-IF SIMULATOR (/what-if)
+- Three sliders for hazard, exposure, vulnerability (0–1 or 0–100), auto-normalized
+  client-side preview; horizon selector (0..3); top-N selector.
+- Debounced POST /weights; while pending show a subtle "recomputing" shimmer.
+- Results: class counts (animated bars), mean score delta vs current, and the top-N
+  re-ranked zones with movement indicators (up/down/flat) versus the baseline rank.
+- A mini map colored by the new scores.
+- Reset to default weights (0.5/0.3/0.2).
+- Guardrails: prevent all-zero weights; show validation message.
+
+H) DATA & METHODOLOGY (/data)
+- Data sources: Open-Meteo/CAMS (~10 km), OpenStreetMap emitters/roads/green,
+  WorldPop 1 km population.
+- Pipeline steps 01–07 in a vertical timeline with icons.
+- Honest limitations callout: regional resolution, composite score without ground
+  truth, daily resolution, proxies.
+- API/dataset field dictionary (collapsible).
+- Environment panel: city, bbox, grid resolution, data date, connection status.
+
+────────────────────────────────────────────────────────────────────────────
+8. MAP SPECIFICATION (implement carefully)
+────────────────────────────────────────────────────────────────────────────
+- MapLibre GL JS with a free basemap requiring no API key. Default:
+  https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json
+  Provide a second style (positron/voyager) toggle. Include MapLibre attribution.
+- Initial view: fit to the Pune bbox with padding; maxZoom ~13.5.
+- Zones source: GeoJSON from /zones for the active horizon. Use a fill layer with
+  a data-driven color expression keyed on `risk_class`, plus a line layer for
+  cell borders (rgba white 0.10). Add a hover state layer (brighter fill) and a
+  selected outline layer (white, 2px, glow via a second blurred line if possible).
+- Feature state for hover; `queryRenderedFeatures` on mousemove; throttle to rAF.
+- Tooltip follows the cursor with an offset, rendered in React (not a MapLibre popup)
+  for consistent styling.
+- Horizon playback: crossfade between two GeoJSON layers (source A/B) using opacity,
+  or dynamically tween `fill-opacity`/color; must be smooth and interruptible.
+- Wind: line layer with a rotated arrow head (symbol layer using a generated
+  triangle image) or a canvas particle overlay. Keep it subtle; never obscure hexes.
+- Legend: fixed bottom-left glass card, collapsible, class swatches + ranges.
+- Controls: bottom-right vertical stack (zoom, compass, reset, fullscreen, toggles).
+- Mobile: controls collapse into a FAB; drawer becomes a bottom sheet.
+- Performance: one source per horizon at a time; dispose layers on unmount; do not
+  recreate the map on state changes; memoize layer definitions.
+- Provide a `useMapLayers` hook and a `ZoneLayer` component.
+
+────────────────────────────────────────────────────────────────────────────
+9. MOTION SYSTEM (Framer Motion)
+────────────────────────────────────────────────────────────────────────────
+- Page transitions: fade + 12px upward, 240ms, ease [0.22, 1, 0.36, 1].
+- KPI count-up: 900ms, easeOutExpo; respect reduced motion (snap to value).
+- Cards/list rows: stagger children by 40ms, spring (stiffness 260, damping 26).
+- Hover: scale 1.01 on cards, 1.02 on map controls; shadow/glow intensifies; 160ms.
+- Drawer: slide in from right 320ms spring; backdrop fade 200ms; content staggers.
+- Charts: animate bars/lines on mount (600–800ms); animate on data change, not on every render.
+- Toasts: slide + fade, auto-dismiss 4s, pause on hover.
+- Loading: skeleton shimmer, never spinners on top of content.
+- Respect prefers-reduced-motion: disable transforms/particles, keep opacity fades.
+- Use `layout` animations for reordering (priority list, what-if rank movement).
+
+────────────────────────────────────────────────────────────────────────────
+10. VISUAL DESIGN SYSTEM
+────────────────────────────────────────────────────────────────────────────
+- Theme: dark, premium "operations console" / data-viz aesthetic, with an optional
+  light mode. Default dark.
+- Background: #070B14 (near-black navy); elevated surfaces #0C1220, #111A2E.
+- Glass panels: rgba(17,26,46,0.72) + backdrop-blur(14px) + 1px border
+  rgba(255,255,255,0.08) + soft inner highlight.
+- Text: primary #E6EDF7, secondary #93A4C0, muted #5F7290.
+- Accent: electric cyan #22D3EE, secondary violet #8B5CF6, success #34D399.
+- Risk tokens: Low #2DD4BF, Moderate #FACC15, High #FB923C, Critical #F43F5E.
+  Provide low-alpha backgrounds (12–18%) for chips/cards.
+- Typography: Inter (UI) + JetBrains Mono (ids/numbers). Import via Google Fonts.
+  Sizes: 12/13/14/16/20/24/32/44; tabular-nums for metrics.
+- Spacing scale: 4/8/12/16/24/32/48; radius: 10/14/18/24; borders 1px.
+- Shadows: 0 8px 30px rgba(0,0,0,0.35); glows only for emphasis (Critical, active).
+- Icons: lucide-react, 16/18/20px, 1.75 stroke.
+- Charts: transparent backgrounds, grid rgba(255,255,255,0.06), no chart junk,
+  consistent class colors, accessible tooltips.
+- Chips/badges: uppercase 11px tracking-wide, colored dot + label.
+- Numbers: format population with compact notation (1.2M), scores to 1 decimal,
+  PM2.5 to 1 decimal.
+- Design tokens in CSS variables + Tailwind theme extension. No inline magic colors.
+
+────────────────────────────────────────────────────────────────────────────
+11. DATA LAYER, STATE, AND RESILIENCE
+────────────────────────────────────────────────────────────────────────────
+- API client in src/lib/api.ts: typed functions for every endpoint, timeout via
+  AbortController (10s), JSON parsing, error normalization, retry (2x exponential)
+  for GETs only, and a clear ApiError type.
+- TanStack Query keys: ["health"], ["summary"], ["zones", horizon, weights],
+  ["priority", horizon, limit, class, weights], ["zone", id], ["forecast", id],
+  ["wind"], ["alerts", minLevel], ["metrics"], ["shap"].
+- staleTime 60s; refetchOnWindowFocus false; poll health + alerts every 60s.
+- Zustand store: horizon, selectedZoneId, weights, layer toggles, demo mode,
+  command palette open, watchlist.
+- Persist watchlist and theme in localStorage.
+- Global connection state: "live" | "simulated" | "error". A banner/pill communicates
+  it; clicking opens details (base URL, last error, retry).
+- Loading skeletons for every panel; error cards with retry; empty states with
+  purposeful copy; partial failures must not blank the page.
+- Guard against missing fields with safe defaults; never crash on undefined.
+
+────────────────────────────────────────────────────────────────────────────
+12. SIMULATION / OFFLINE MODE (must be realistic and clearly labeled)
+────────────────────────────────────────────────────────────────────────────
+- Primary path: live API at VITE_API_BASE_URL.
+- If the API is unreachable on startup or health fails, switch to Demo Simulation.
+- Demo data must be plausible and deterministic, not random noise:
+  * Generate the 136-cell H3 res-7 grid over the Pune bbox using h3-js.
+  * Seed a deterministic PRNG from the cell id, then derive score, class,
+    hazard/exposure/vulnerability, PM2.5, population, and drivers with realistic
+    spatial structure (higher near the center and industrial east, lower in green
+    west). Respect the class thresholds and the score formula.
+  * Generate h0..h3 by applying small, smooth deltas (±4 points); generate 30 days
+    of history and a 3-day forecast; generate wind vectors; generate priority
+    ranking by score × population; generate metrics/SHAP fixtures matching the
+    schema (use the real values from this brief as the fixture).
+- Optionally load better fixtures from /demo/*.json if the developer copies the
+  backend data files there; prefer those over procedural generation.
+- Show an unmistakable "Demo Simulation" pill and a one-paragraph note in Data.
+- A toggle must allow forcing live or demo for testing; default auto.
+- Never silently present simulated numbers as live.
+
+────────────────────────────────────────────────────────────────────────────
+13. ACCESSIBILITY & RESPONSIVENESS
+────────────────────────────────────────────────────────────────────────────
+- Semantic landmarks, skip-to-content link, logical heading order.
+- All interactive elements focusable with visible focus rings (2px cyan offset).
+- Map has a keyboard-accessible alternative: the Priority Queue + Zone drawer.
+- Color is never the only signal: pair class colors with labels/icons.
+- Contrast: body text ≥ 4.5:1; large text ≥ 3:1.
+- Charts expose data via accessible tables (visually hidden) or aria descriptions.
+- Drawers/modals: focus trap, Esc to close, restore focus, aria-modal.
+- Touch targets ≥ 44px; no hover-only actions.
+- Layout: sidebar → icon rail → bottom nav; grids collapse to one column; map
+  height adapts to viewport; no horizontal scroll at 360px.
+
+────────────────────────────────────────────────────────────────────────────
+14. PERFORMANCE
+────────────────────────────────────────────────────────────────────────────
+- Route-level code splitting (React.lazy + Suspense).
+- Memoize map layers, chart data transforms, and table rows.
+- Virtualize the 136-row priority table.
+- Debounce what-if sliders (300ms) and map hover (rAF).
+- Avoid re-rendering the map on unrelated state; isolate contexts.
+- Preload fonts; use system font fallback; compress images/SVGs.
+- Keep bundle lean; no duplicate chart/map libraries.
+
+────────────────────────────────────────────────────────────────────────────
+15. TESTING & ACCEPTANCE CRITERIA (verify before finishing)
+────────────────────────────────────────────────────────────────────────────
+Functional:
+- With the backend running, all pages populate from live data; no mock values leak.
+- With the backend stopped, the app switches to Demo Simulation and remains fully usable.
+- Horizon changes update the map, legend date, priority scores, and zone forecast.
+- Clicking a hex opens the correct zone detail; deep link /zones/:id works on reload.
+- Min-class filter, sorting, limit, and risk_class filters behave correctly.
+- What-If posts weights, updates class counts and ranking with movement indicators,
+  and reset restores defaults.
+- Alerts filter and dry-run notify work; 503 is handled with a clear message.
+- Model Lab shows metrics and SHAP from the API and highlights the best model.
+- Health pill reflects Live vs Demo; retry recovers after the backend starts.
+Quality:
+- `npm run build` and `npm run typecheck` pass with zero errors.
+- No console errors or React key warnings.
+- Lighthouse: performance ≥ 85, accessibility ≥ 95 on desktop.
+- Keyboard-only walkthrough of every page succeeds.
+- Responsive at 360/768/1024/1440 with no overflow.
+- Reduced-motion mode disables playback/particle/transform animations.
+
+────────────────────────────────────────────────────────────────────────────
+16. DELIVERABLES
+────────────────────────────────────────────────────────────────────────────
+Output a complete, runnable project with this structure (adjust only if necessary):
+
+  frontend/
+    package.json
+    tsconfig.json
+    vite.config.ts
+    tailwind.config.ts
+    postcss.config.js
+    index.html
+    .env.example
+    README.md
+    src/
+      main.tsx
+      App.tsx
+      index.css
+      router.tsx
+      lib/
+        api.ts
+        types.ts
+        risk.ts            (classes, colors, thresholds, formatting)
+        query.ts           (query client + keys)
+        simulate.ts        (deterministic H3 demo data generator)
+        format.ts          (numbers, dates, compact population)
+        cn.ts
+      store/
+        useAppStore.ts
+      hooks/
+        useHealth.ts
+        useZones.ts
+        useZone.ts
+        usePriorityQueue.ts
+        useAlerts.ts
+        useModel.ts
+        useMapLayers.ts
+        useCountUp.ts
+        useReducedMotion.ts
+      components/
+        layout/ (AppShell, Sidebar, TopBar, MobileNav, CommandPalette)
+        ui/ (Card, Button, Chip, Badge, Tooltip, Drawer, Modal, Skeleton,
+             EmptyState, ErrorState, Toaster, SegmentedControl, Slider,
+             StatCard, Sparkline, ScoreGauge, ConnectionPill)
+        map/ (RiskMap, ZoneLayer, WindLayer, EmitterLayer, MapControls,
+              MapLegend, MapTooltip, HorizonPlayback)
+        charts/ (RiskDistribution, ForecastChart, ShapBars, ComponentBreakdown,
+                 WeightSimulation, MetricsComparison)
+        zones/ (ZoneDrawer, ZoneListRow, ZoneHeader, PointBreakdown, DriverList)
+        priority/ (PriorityTable, PriorityFilters, PriorityRow)
+        alerts/ (AlertCard, AlertFilters, NotifyComposer)
+      pages/
+        CommandCenter.tsx
+        RiskMapPage.tsx
+        PriorityPage.tsx
+        ZonePage.tsx
+        ModelLabPage.tsx
+        AlertsPage.tsx
+        WhatIfPage.tsx
+        DataPage.tsx
+        NotFound.tsx
+      mocks/
+        demo-fixtures.ts   (real values from this brief + generated cells)
+    public/
+      demo/ (optional: zones_h0..h3.geojson, priority_queue.json, etc.)
+      data/ (optional: emitters.json)
+
+- Write every file fully. Do not abbreviate with "...".
+- Include comments only where they add clarity (no narration).
+- Include a README with setup, env vars, how to point at the backend, how demo mode
+  works, and the acceptance checklist.
+- If output length is limited, continue file-by-file in subsequent messages and state
+  exactly which files remain; never leave a file half-written.
+
+────────────────────────────────────────────────────────────────────────────
+17. HARD CONSTRAINTS
+────────────────────────────────────────────────────────────────────────────
+- Do not invent endpoints, fields, or query parameters beyond this brief.
+- Do not hardcode live-looking numbers except inside clearly labeled demo fixtures.
+- Do not use Google Maps, Mapbox, or any API key-dependent service.
+- Do not add authentication.
+- Do not use a component library that overrides the design system.
+- Do not use lorem ipsum, dead buttons, or non-functional controls.
+- Do not silently fall back to fake data; always show Demo Simulation status.
+- Do not break when an optional field is missing (e.g., no alerts, no emitters file).
+- Do not recreate the map on every render; manage lifecycle carefully.
+- Do not animate when prefers-reduced-motion is set.
+
+Start by briefly confirming the architecture and the file list, then output the project
+file by file in the order above. Prioritize a working map + Command Center + Zone drawer
+first, then Priority, Model Lab, Alerts, What-If, and Data. The result must look and feel
+like a funded climate-intelligence product, not a student demo.
