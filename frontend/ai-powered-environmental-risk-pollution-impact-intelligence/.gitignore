@@ -1,0 +1,21 @@
+# Dependencies / build output
+node_modules
+dist
+.gmp_cache
+
+# Local env & secrets
+.env
+.env.local
+*.pem
+
+# Logs / OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Python (pipeline artifacts)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/

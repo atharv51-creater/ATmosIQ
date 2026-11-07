@@ -1,0 +1,1 @@
+{"city": "Pune Metro (PMC + PCMC)", "data_date": "2026-11-06", "weights": {"hazard": 0.5, "exposure": 0.3, "vulnerability": 0.2}, "class_counts_now": {"Moderate": 117, "High": 17, "Low": 2}, "mean_score_now": 41.2, "mean_score_h3": 41.0, "population_in_high_or_critical": 4535423}
