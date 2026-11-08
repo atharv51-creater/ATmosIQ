@@ -425,15 +425,19 @@ export const AdvancedMap: React.FC<AdvancedMapProps> = ({
   const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
   const [searchResult, setSearchResult] = useState<{ latLng: [number, number]; name: string } | null>(null);
   const [clickedLocation, setClickedLocation] = useState<{ lat: number; lng: number } | null>(null);
+  const [baseTileError, setBaseTileError] = useState(false);
+  const [satelliteTileError, setSatelliteTileError] = useState(false);
+  const [tileReloadKey, setTileReloadKey] = useState(0);
 
   // Handle layer toggling
   const handleToggleLayer = useCallback((layerType: "satellite" | "traffic") => {
     setCurrentLayers((prev) => {
       if (layerType === "satellite") {
+        const satellite = !prev.satellite;
         return {
           ...prev,
-          satellite: !prev.satellite,
-          openstreetmap: prev.satellite, // toggle between satellite and street
+          satellite,
+          openstreetmap: !satellite, // keep exactly one base layer active
         };
       }
       return {
@@ -441,6 +445,21 @@ export const AdvancedMap: React.FC<AdvancedMapProps> = ({
         [layerType]: !prev[layerType],
       };
     });
+  }, []);
+
+  // Clear tile errors whenever the active base layer changes
+  useEffect(() => {
+    setBaseTileError(false);
+  }, [currentLayers.openstreetmap]);
+
+  useEffect(() => {
+    setSatelliteTileError(false);
+  }, [currentLayers.satellite]);
+
+  const handleRetryTiles = useCallback(() => {
+    setBaseTileError(false);
+    setSatelliteTileError(false);
+    setTileReloadKey((key) => key + 1);
   }, []);
 
   // Handle geolocation
@@ -538,6 +557,11 @@ export const AdvancedMap: React.FC<AdvancedMapProps> = ({
     });
   }, [circles]);
 
+  const activeTileError = Boolean(
+    (currentLayers.openstreetmap && baseTileError) ||
+      (currentLayers.satellite && satelliteTileError)
+  );
+
   return (
     <div className={`advanced-map relative z-0 overflow-hidden ${className}`} style={style}>
       <MapContainer
@@ -554,15 +578,40 @@ export const AdvancedMap: React.FC<AdvancedMapProps> = ({
         {/* Base tile layers */}
         {currentLayers.openstreetmap && (
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            key={`carto-dark-${tileReloadKey}`}
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            subdomains="abcd"
+            maxZoom={20}
+            eventHandlers={{
+              tileerror: (event: L.TileErrorEvent) => {
+                console.warn(
+                  "[interactive-map] CARTO base tile failed to load:",
+                  event.tile?.src,
+                  event.error
+                );
+                setBaseTileError(true);
+              },
+            }}
           />
         )}
 
         {currentLayers.satellite && (
           <TileLayer
-            attribution='&copy; <a href="https://www.esri.com/">Esri</a>'
+            key={`esri-satellite-${tileReloadKey}`}
+            attribution='&copy; <a href="https://www.esri.com/">Esri</a>, Maxar, Earthstar Geographics'
             url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+            maxZoom={19}
+            eventHandlers={{
+              tileerror: (event: L.TileErrorEvent) => {
+                console.warn(
+                  "[interactive-map] Satellite tile failed to load:",
+                  event.tile?.src,
+                  event.error
+                );
+                setSatelliteTileError(true);
+              },
+            }}
           />
         )}
 
@@ -758,6 +807,49 @@ export const AdvancedMap: React.FC<AdvancedMapProps> = ({
           </Polyline>
         ))}
       </MapContainer>
+
+      {activeTileError && (
+        <div
+          role="status"
+          style={{
+            position: "absolute",
+            bottom: 16,
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 1100,
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            maxWidth: "calc(100% - 32px)",
+            padding: "8px 12px",
+            borderRadius: 8,
+            border: "1px solid rgba(248, 113, 113, 0.5)",
+            background: "rgba(30, 12, 12, 0.95)",
+            color: "#fecaca",
+            fontSize: 13,
+            fontFamily: "'Lora', serif",
+            boxShadow: "0 4px 14px rgba(0,0,0,0.4)",
+          }}
+        >
+          <span>Map tiles could not be loaded. Check your connection.</span>
+          <button
+            type="button"
+            onClick={handleRetryTiles}
+            style={{
+              padding: "4px 10px",
+              borderRadius: 6,
+              border: "1px solid rgba(248, 113, 113, 0.6)",
+              background: "#3f1a1a",
+              color: "#fecaca",
+              fontFamily: "'Lora', serif",
+              fontWeight: 600,
+              cursor: "pointer",
+            }}
+          >
+            Retry
+          </button>
+        </div>
+      )}
     </div>
   );
 };
