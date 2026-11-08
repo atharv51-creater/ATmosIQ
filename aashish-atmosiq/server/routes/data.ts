@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { getFires } from '../data/fires.js';
 import { getAirQuality } from '../data/airQuality.js';
 import { getDeforestation } from '../data/deforestation.js';
-import { buildContext, summarise } from '../ai.js';
+import { buildContext, buildGeminiBrief } from '../ai.js';
 import { requireAuth } from './auth.js';
 import { db, type EnvironmentalAlertRow, type EnvironmentalSnapshotRow } from '../db.js';
 
@@ -192,8 +192,14 @@ dataRouter.post('/ai/summary', requireAuth, aiLimiter, async (req, res) => {
   }
   try {
     const ctx = await buildContext(parsed.data.name, parsed.data.lat, parsed.data.lon);
-    const out = await summarise(ctx);
-    res.json({ summary: out.text, source: out.source, context: ctx, generatedAt: new Date().toISOString() });
+    const { brief, source, model } = await buildGeminiBrief(ctx);
+    res.json({
+      ...brief,
+      source,
+      model,
+      generatedAt: brief.generated_at,
+      context: ctx,
+    });
   } catch (err) {
     console.error('[ai]', err instanceof Error ? err.message : err);
     res.status(502).json({ error: 'Could not build the summary right now.' });

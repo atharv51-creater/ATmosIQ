@@ -176,6 +176,13 @@ test('AI summary validates input and falls back to the rule-based brief', async 
   assert.equal(ok.status, 200);
   assert.equal(ok.json.source, 'rule-based');
   assert.match(ok.json.summary, /AQI 160/);
+  assert.ok(typeof ok.json.risk_level === 'string' && ok.json.risk_level.length > 0);
+  assert.ok(typeof ok.json.risk_reasoning === 'string' && ok.json.risk_reasoning.length > 0);
+  assert.ok(Array.isArray(ok.json.recommended_actions) && ok.json.recommended_actions.length > 0);
+  assert.ok(Array.isArray(ok.json.data_limitations));
+  assert.ok(typeof ok.json.confidence === 'number' && ok.json.confidence >= 0 && ok.json.confidence <= 1);
+  assert.ok(ok.json.generatedAt);
+  assert.equal(ok.json.model, 'gemini-3.1-flash-lite');
 });
 
 test('rule-based brief tells "source failed" apart from "nothing nearby"', () => {

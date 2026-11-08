@@ -36,9 +36,17 @@ export interface Overview {
   deforestation: { hotspots: number; live: boolean };
 }
 export interface AiSummary {
-  summary: string;
   source: 'gemini' | 'rule-based';
+  model: string;
   generatedAt: string;
+  summary: string;
+  risk_level: string;
+  risk_reasoning: string;
+  top_risk_drivers: string[];
+  environmental_observations: string[];
+  recommended_actions: string[];
+  data_limitations: string[];
+  confidence: number;
   context: { fires: { count: number; totalFrp: number; maxFrp: number; live: boolean }; radiusKm: number };
 }
 export interface SelectedPlace { name: string; lat: number; lon: number; kind: 'fire' | 'air' | 'forest' | 'point'; details: string[]; }
