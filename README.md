@@ -74,7 +74,6 @@ Time-based holdout (`time_cut = 2026-04-14`), PM2.5 forecast:
 ai-powered-environmental-risk-pollution-impact-intelligence/
 ├── README.md                      # this file
 ├── .gitignore
-├── main.py                        # legacy single-file API prototype (use backend/ instead)
 │
 ├── aashish-atmosiq/               # Global React 19 + Express UI (canonical frontend)
 │   ├── src/                       # dashboard, world map/globe, auth, Pune risk page
@@ -98,26 +97,24 @@ ai-powered-environmental-risk-pollution-impact-intelligence/
 │   ├── .env.example
 │   └── README.md
 │
-├── pune_risk/                     # Pune regional data + ML pipeline
-│   ├── run_all.py                 # orchestrates steps 01 → 07
-│   ├── common.py                  # config: bbox, grid res, dates, weights, helpers
-│   ├── risk_engine.py             # score formula, classification, recommended actions
-│   ├── 00_make_synthetic_data.py  # offline smoke-test data (never used for results)
-│   ├── 01_build_grid.py           # H3 hex grid over Pune
-│   ├── 02_download_openmeteo.py   # cached/resumable air-quality + weather download
-│   ├── 03_static_features.py      # OSM emitters/roads/green + WorldPop population
-│   ├── 04_features.py             # lag/trend/wind/upwind feature engineering
-│   ├── 05_train_models.py         # XGBoost + RF, time + spatial validation
-│   ├── 06_forecast_explain.py     # +1/+2/+3 day forecasts and SHAP drivers
-│   ├── 07_risk_scores.py          # scores, priority queue, alerts, summaries
-│   ├── requirements.txt
-│   ├── README.md                  # pipeline-specific notes
-│   ├── data/                      # inputs + intermediates (parquet, grid, WorldPop .tif)
-│   ├── cache/                     # Open-Meteo response cache (resumable runs)
-│   ├── models/                    # trained gbm_h1..h3.joblib + feature columns
-│   └── output/                    # deliverables consumed by the backend
-│
-└── frontend/                      # Early Vite scaffold (superseded by aashish-atmosiq)
+└── pune_risk/                     # Pune regional data + ML pipeline
+    ├── run_all.py                 # orchestrates steps 01 → 07
+    ├── common.py                  # config: bbox, grid res, dates, weights, helpers
+    ├── risk_engine.py             # score formula, classification, recommended actions
+    ├── 00_make_synthetic_data.py  # offline smoke-test data (never used for results)
+    ├── 01_build_grid.py           # H3 hex grid over Pune
+    ├── 02_download_openmeteo.py   # cached/resumable air-quality + weather download
+    ├── 03_static_features.py      # OSM emitters/roads/green + WorldPop population
+    ├── 04_features.py             # lag/trend/wind/upwind feature engineering
+    ├── 05_train_models.py         # XGBoost + RF, time + spatial validation
+    ├── 06_forecast_explain.py     # +1/+2/+3 day forecasts and SHAP drivers
+    ├── 07_risk_scores.py          # scores, priority queue, alerts, summaries
+    ├── requirements.txt
+    ├── README.md                  # pipeline-specific notes
+    ├── data/                      # inputs + intermediates (parquet, grid, WorldPop .tif)
+    ├── cache/                     # Open-Meteo response cache (resumable runs)
+    ├── models/                    # trained gbm_h1..h3.joblib + feature columns
+    └── output/                    # deliverables consumed by the backend
 ```
 
 ## Quick start
@@ -251,4 +248,3 @@ Pune pipeline settings live in the CONFIG block of `pune_risk/common.py`: `CITY`
 - Child/elderly share and NDVI are not included; green cover and temperature are proxies.
 - Resolution is daily; horizons are +1/+2/+3 days.
 - The 3D globe and MapLibre maps require WebGL in the browser.
-- Use `aashish-atmosiq/` for the UI; the older `frontend/` folder is a superseded scaffold.
