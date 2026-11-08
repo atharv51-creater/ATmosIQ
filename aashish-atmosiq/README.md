@@ -1,6 +1,6 @@
 # ATmosIQ — Environmental Intelligence Platform
 
-Live fires (NASA FIRMS), air quality (Open-Meteo) and forest-loss hotspots on one interactive globe, with AI risk briefs (Gemini).
+Worldwide fires (NASA FIRMS), air quality across 45 major cities (Open-Meteo / CAMS) and global forest-loss hotspots on one interactive globe, with AI risk briefs (Gemini). Pune, India is included as the validated regional ML deep-dive.
 
 **Stack:** React 19 · Vite · Tailwind 4 · React Router · MapLibre · Motion · Express · SQLite · Gemini
 
@@ -11,7 +11,12 @@ cp .env.example .env        # add FIRMS_MAP_KEY and GEMINI_API_KEY (both optiona
 npm run dev                 # web on :3000, API on :8080
 ```
 
-### Connect the ML risk backend (Pune pipeline)
+### Global layers (whole world)
+The world map/globe, fire detections, 45-city air quality, forest-loss hotspots and Gemini briefs
+run on their own. The Pune section below is an optional regional ML deep-dive and the only part
+that needs the Python service.
+
+### Pune deep-dive (regional ML)
 The **Pune Risk Intelligence** dashboard page is powered by the Python FastAPI service in `../backend`.
 
 ```bash
