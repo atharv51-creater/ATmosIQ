@@ -578,15 +578,14 @@ export const AdvancedMap: React.FC<AdvancedMapProps> = ({
         {/* Base tile layers */}
         {currentLayers.openstreetmap && (
           <TileLayer
-            key={`carto-dark-${tileReloadKey}`}
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-            subdomains="abcd"
-            maxZoom={20}
+            key={`esri-street-${tileReloadKey}`}
+            attribution='&copy; Esri, HERE, Garmin, (c)OpenStreetMap contributors'
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+            maxZoom={19}
             eventHandlers={{
               tileerror: (event: L.TileErrorEvent) => {
                 console.warn(
-                  "[interactive-map] CARTO base tile failed to load:",
+                  "[interactive-map] Esri street tile failed to load:",
                   event.tile?.src,
                   event.error
                 );
