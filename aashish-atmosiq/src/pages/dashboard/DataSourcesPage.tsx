@@ -65,14 +65,14 @@ export const DataSourcesPage: React.FC = () => {
     },
     {
       id: 'gemini',
-      name: 'Google Gemini 1.5 & Rule-Based Synthesis Engine',
+      name: 'Google Gemini & Rule-Based Synthesis Engine',
       icon: Sparkles,
       badge: 'Neural Analysis',
       status: 'live',
       description:
         'Multivariate environmental reasoning engine synthesizing spatial proximity vectors, active particulate dispersion, and ecological threat dynamics into actionable mitigation briefings.',
       specs: [
-        { label: 'Foundation Model', value: 'Gemini 1.5 Flash (or deterministic offline rule-based fallback)' },
+        { label: 'Foundation Model', value: 'Gemini 3.1 Flash Lite (or deterministic offline rule-based fallback)' },
         { label: 'Input Grounding', value: 'Strictly bounded to active FIRMS, CAMS, and GFW vectors within radius' },
         { label: 'Analysis Output', value: 'Situation assessment, potential impacts, and recommended mitigations' },
         { label: 'Rate Control', value: '8 syntheses per minute rate-limited with fallback resilience' },

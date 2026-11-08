@@ -1,13 +1,20 @@
 import { useCallback, useEffect, useState } from 'react';
 import { api, ApiError } from './api';
 
-export function useApi<T>(path: string) {
+/** Fetch an API path once (and on retry). Pass `null` to defer the request. */
+export function useApi<T>(path: string | null) {
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(path !== null);
   const [tick, setTick] = useState(0);
 
   useEffect(() => {
+    if (path === null) {
+      setData(null);
+      setLoading(false);
+      setError(null);
+      return;
+    }
     let active = true;
     setLoading(true);
     setError(null);

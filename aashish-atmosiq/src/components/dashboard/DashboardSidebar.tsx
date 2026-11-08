@@ -13,6 +13,7 @@ import {
   LogOut,
   X,
   Leaf,
+  BrainCircuit,
 } from 'lucide-react';
 import type { User } from '@/types';
 
@@ -42,6 +43,7 @@ const NAV_SECTIONS: NavSection[] = [
     category: 'OVERVIEW',
     items: [
       { title: 'Overview', path: '/dashboard', icon: Globe },
+      { title: 'Pune Risk Intelligence', path: '/dashboard/pune-risk', icon: BrainCircuit, badge: 'ML' },
       { title: 'Environmental Risk Map', path: '/dashboard/map', icon: Map },
     ],
   },

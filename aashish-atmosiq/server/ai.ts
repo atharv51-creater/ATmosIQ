@@ -78,9 +78,35 @@ export function ruleBasedSummary(c: AreaContext): string {
   return parts.join(' ');
 }
 
-export async function summarise(c: AreaContext): Promise<{ text: string; source: 'gemini' | 'rule-based' }> {
-  if (!config.geminiKey) return { text: ruleBasedSummary(c), source: 'rule-based' };
+export interface GeneratedText {
+  text: string;
+  source: 'gemini' | 'rule-based';
+}
 
+/** Shared Gemini call with a deterministic fallback so callers never fail. */
+export async function generateText(prompt: string, fallback: string): Promise<GeneratedText> {
+  if (!config.geminiKey) return { text: fallback, source: 'rule-based' };
+
+  try {
+    const ai = new GoogleGenAI({ apiKey: config.geminiKey, apiVersion: config.geminiApiVersion });
+    const resp = await ai.models.generateContent({
+      model: config.geminiModel,
+      contents: prompt,
+      config: {
+        temperature: 0.4,
+        maxOutputTokens: 320,
+      },
+    });
+    const text = resp.text?.trim();
+    if (!text) throw new Error('empty response');
+    return { text, source: 'gemini' };
+  } catch (err) {
+    console.error('[ai] Gemini failed, using fallback:', err instanceof Error ? err.message : err);
+    return { text: fallback, source: 'rule-based' };
+  }
+}
+
+export async function summarise(c: AreaContext): Promise<GeneratedText> {
   const prompt = [
     'You are an environmental analyst writing a brief for a non-expert decision maker.',
     'Use ONLY the JSON data below. Do not invent numbers. If a field is missing or null, say the data is unavailable. If airQualityStatus is "unavailable" the air-quality source failed; if "none-nearby" there is no monitored city within 500 km.',
@@ -91,14 +117,5 @@ export async function summarise(c: AreaContext): Promise<{ text: string; source:
     JSON.stringify(c),
   ].join('\n');
 
-  try {
-    const ai = new GoogleGenAI({ apiKey: config.geminiKey });
-    const resp = await ai.models.generateContent({ model: config.geminiModel, contents: prompt });
-    const text = resp.text?.trim();
-    if (!text) throw new Error('empty response');
-    return { text, source: 'gemini' };
-  } catch (err) {
-    console.error('[ai] Gemini failed, using rule-based summary:', err instanceof Error ? err.message : err);
-    return { text: ruleBasedSummary(c), source: 'rule-based' };
-  }
+  return generateText(prompt, ruleBasedSummary(c));
 }

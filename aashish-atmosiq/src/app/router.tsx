@@ -9,6 +9,7 @@ const AuthRoute = lazy(() => import('@/pages/AuthRoute'));
 // Dashboard Layout & Modular Page Views
 const DashboardLayout = lazy(() => import('@/components/dashboard/DashboardLayout'));
 const OverviewPage = lazy(() => import('@/pages/dashboard/OverviewPage'));
+const PuneRiskPage = lazy(() => import('@/pages/dashboard/PuneRiskPage'));
 const RiskMapPage = lazy(() => import('@/pages/dashboard/RiskMapPage'));
 const AtmosphericPage = lazy(() => import('@/pages/dashboard/AtmosphericPage'));
 const RiskAnalysisPage = lazy(() => import('@/pages/dashboard/RiskAnalysisPage'));
@@ -46,6 +47,7 @@ export const router = createBrowserRouter([
             element: <DashboardLayout />,
             children: [
               { index: true, element: <OverviewPage /> },
+              { path: 'pune-risk', element: <PuneRiskPage /> },
               { path: 'map', element: <RiskMapPage /> },
               { path: 'atmospheric', element: <AtmosphericPage /> },
               { path: 'risk-analysis', element: <RiskAnalysisPage /> },

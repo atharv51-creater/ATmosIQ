@@ -166,7 +166,7 @@ export const AiBriefPage: React.FC = () => {
                     : 'border-amber-700/60 bg-amber-950/60 text-amber-300'
                 }`}
               >
-                {summary.source === 'gemini' ? 'Google Gemini 1.5 Synthesis' : 'Rule-Based Offline Fallback'}
+                {summary.source === 'gemini' ? 'Google Gemini Synthesis' : 'Rule-Based Offline Fallback'}
               </span>
               <span className="text-[#9CAEA2]">
                 Telemetry verification: {summary.context.fires.count} active thermal fires within {summary.context.radiusKm} km

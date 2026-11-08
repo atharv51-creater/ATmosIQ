@@ -141,7 +141,7 @@ dataRouter.get(
       });
     }
 
-    const rows = db.prepare('SELECT * FROM environmental_alerts ORDER BY acknowledged ASC, severity = "critical" DESC, created_at DESC').all() as EnvironmentalAlertRow[];
+    const rows = db.prepare("SELECT * FROM environmental_alerts ORDER BY acknowledged ASC, severity = 'critical' DESC, created_at DESC").all() as EnvironmentalAlertRow[];
     return { alerts: rows, total: rows.length, unacknowledged: rows.filter((r) => !r.acknowledged).length };
   })
 );

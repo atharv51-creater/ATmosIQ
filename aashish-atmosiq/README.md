@@ -10,7 +10,31 @@ npm install
 cp .env.example .env        # add FIRMS_MAP_KEY and GEMINI_API_KEY (both optional for a first run)
 npm run dev                 # web on :3000, API on :8080
 ```
-Gemini note: Google limits `gemini-2.5-*` to accounts that already used them, so the default is `gemini-3.8-flash`; override with `GEMINI_MODEL` if Google changes names again.
+
+### Connect the ML risk backend (Pune pipeline)
+The **Pune Risk Intelligence** dashboard page is powered by the Python FastAPI service in `../backend`.
+
+```bash
+# terminal 1 - ML/risk API
+cd ../backend && pip install -r requirements.txt
+pip install -r requirements-ml.txt   # optional: live XGBoost inference
+uvicorn app.main:app --port 8000
+
+# terminal 2 - ATmosIQ web + API
+cp .env.example .env         # RISK_API_URL defaults to http://127.0.0.1:8000
+npm run dev
+```
+
+The Express API proxies `/api/v1/risk/*` to FastAPI (server-side, authenticated), so the browser never talks to
+`:8000` directly. `GET /api/v1/risk/model-status` reports whether the XGBoost models are scoring live or serving the
+last pipeline forecast. When the Python service is offline the page shows an explicit "Risk / ML service is unavailable"
+message instead of silently fabricating data.
+
+`POST /api/v1/risk/zone-brief` (`{ "cell_id": "..." }`) builds a decision-maker brief for one H3
+zone from its score components, SHAP drivers and +1/+2/+3 day forecast, then rewrites it with Gemini.
+The response carries `source: "gemini" | "rule-based"` so the UI can label fallbacks honestly.
+
+Gemini note: newer keys must use a 3.x model and the `v1` API. The defaults are `GEMINI_MODEL=gemini-3.1-flash-lite` and `GEMINI_API_VERSION=v1`; override either in `.env` if Google changes names. `v1beta` can return `402 RESOURCE_EXHAUSTED` for new projects even when `v1` works.
 
 Without keys the app still runs: fires show clearly-labelled **sample** data and AI briefs fall back to a rule-based summary (also labelled).
 

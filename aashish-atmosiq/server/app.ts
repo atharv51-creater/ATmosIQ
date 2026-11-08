@@ -9,6 +9,7 @@ import './db.js';
 import { authRouter } from './routes/auth.js';
 import { dataRouter } from './routes/data.js';
 import { adminRouter } from './routes/admin.js';
+import { riskRouter } from './routes/risk.js';
 
 export function createApp() {
   const app = express();
@@ -46,6 +47,7 @@ export function createApp() {
   });
   app.use('/api/v1/auth', authRouter);
   app.use('/api/v1/admin', adminRouter);
+  app.use('/api/v1/risk', riskRouter);
   app.use('/api/v1', dataRouter);
   app.use('/api', (_req, res) => res.status(404).json({ error: 'Not found' }));
 

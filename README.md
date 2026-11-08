@@ -79,11 +79,12 @@ pune_risk_pipeline/
 │   ├── .env.example
 │   └── README.md
 │
-└── frontend/                      # React + Vite scaffold (UI pending)
-    ├── public/index.html
-    ├── src/                       # empty — components not implemented yet
-    ├── package.json
-    └── vite.config.js
+├── aashish-atmosiq/               # Integrated React 19 + Express UI (canonical frontend)
+│   ├── src/                       # dashboard, maps, auth, Pune Risk Intelligence (ML) page
+│   ├── server/                    # Express API: auth, live FIRMS/CAMS data, /risk proxy to FastAPI
+│   └── .env.example               # PORT, JWT_SECRET, RISK_API_URL, optional FIRMS/Gemini keys
+│
+└── frontend/                      # Early Vite scaffold (superseded by aashish-atmosiq)
 ```
 
 ## Quick start
@@ -104,17 +105,31 @@ Without it the pipeline falls back to a clearly labelled population proxy.
 
 Outputs land in `pune_risk/output/`.
 
-### 2. Run the backend
+### 2. Run the backend + integrated frontend
 
 ```bash
+# terminal 1 — FastAPI / ML service (:8000)
 cd backend
 cp .env.example .env
+python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000      # docs: http://localhost:8000/docs
-python -m unittest discover -s tests           # 11 tests
+pip install -r requirements-ml.txt              # optional: live XGBoost scoring
+uvicorn app.main:app --reload --port 8000       # docs: http://localhost:8000/docs
+
+# terminal 2 — ATmosIQ web (:3000) + Express API (:8080)
+cd aashish-atmosiq
+npm install
+cp .env.example .env                            # RISK_API_URL defaults to http://127.0.0.1:8000
+npm run dev
 ```
 
-Or with Docker:
+Open **http://localhost:3000**, sign up, then visit **Dashboard → Pune Risk Intelligence** for
+the ML-backed H3 risk map, priority queue, what-if lab, alerts and validation metrics.
+The Express API proxies `/api/v1/risk/*` to FastAPI server-side, so the browser has one origin
+and the ML service stays private. `GET /api/v1/risk/model-status` reports whether scoring is
+live (`engine: xgboost`) or serving the last pre-computed forecast.
+
+Or run the backend with Docker:
 
 ```bash
 cd backend
@@ -171,4 +186,4 @@ Backend settings are environment variables documented in `backend/.env.example`.
   **PM2.5 forecast is the validated component**.
 - Child/elderly share and NDVI are not included; green cover and temperature are proxies.
 - Resolution is daily; horizons are +1/+2/+3 days.
-- The `frontend/` folder is a scaffold only — the UI is not implemented yet.
+- Use `aashish-atmosiq/` for the UI; the older `frontend/` folder is a superseded scaffold.

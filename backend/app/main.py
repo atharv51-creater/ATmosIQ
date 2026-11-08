@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field, model_validator
 from .config import Settings
 from .store import DataStore, DataNotReady
 from .services import RiskService
-from . import notify
+from . import notify, ml
 
 cfg = Settings()
 store = DataStore(cfg.data_dir)
@@ -76,6 +76,12 @@ def health():
     out = {"status": "ok" if ready else "no_data", "synthetic_data": store.is_synthetic, "data_dir": str(cfg.data_dir)}
     if ready:
         out["data_date"] = svc.summary().get("data_date")
+    try:
+        st = ml.status()
+        out["ml"] = {"engine": st["engine"], "live_inference": st["live_inference"],
+                     "forecast_available": st["forecast_available"]}
+    except Exception:
+        out["ml"] = {"engine": "unavailable", "live_inference": False, "forecast_available": False}
     return out
 
 
@@ -178,3 +184,32 @@ def model_metrics():
 @app.get("/model/shap", tags=["model"], summary="Global feature importance of the forecast model")
 def model_shap():
     return svc.shap_global()
+
+
+@app.get("/model/status", tags=["model"], summary="Whether the trained models are loaded and scoring live")
+def model_status():
+    return ml.status()
+
+
+@app.get("/model/forecast", tags=["model"], summary="Latest +1/+2/+3 day PM2.5 predictions produced by the models")
+def model_forecast():
+    try:
+        return ml.forecast_latest()
+    except FileNotFoundError as e:
+        raise HTTPException(503, str(e))
+
+
+@app.get("/model/predict/{zone_id}", tags=["model"], summary="Score one zone with the trained models (live when libraries are present)")
+def model_predict(zone_id: str):
+    d = ml.predict_zone(zone_id)
+    if d is None:
+        raise HTTPException(404, f"Zone '{zone_id}' is not in the feature table")
+    return d
+
+
+@app.get("/model/explain/{zone_id}", tags=["model"], summary="SHAP drivers for one zone")
+def model_explain(zone_id: str):
+    d = ml.explain_zone(zone_id)
+    if d is None:
+        raise HTTPException(404, f"No stored explanation for zone '{zone_id}'")
+    return d

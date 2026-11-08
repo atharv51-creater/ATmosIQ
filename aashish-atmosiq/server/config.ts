@@ -21,5 +21,8 @@ export const config = {
   // Comma-separated emails that receive the 'admin' role when they sign up.
   adminEmails: (process.env.ADMIN_EMAILS ?? '').split(',').map((e) => e.trim().toLowerCase()).filter(Boolean),
   geminiKey: process.env.GEMINI_API_KEY ?? '',
-  geminiModel: process.env.GEMINI_MODEL ?? 'gemini-3.8-flash',
+  geminiModel: process.env.GEMINI_MODEL ?? 'gemini-3.1-flash-lite',
+  geminiApiVersion: process.env.GEMINI_API_VERSION ?? 'v1',
+  // Python FastAPI service that serves the Pune ML risk pipeline.
+  riskApiUrl: (process.env.RISK_API_URL ?? 'http://127.0.0.1:8000').replace(/\/$/, ''),
 };
